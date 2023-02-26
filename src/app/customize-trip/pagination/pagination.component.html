@@ -1,0 +1,19 @@
+<nav class="pagination-container" style="margin-left: 200px;">
+  <div class="pagination">
+      <a class="pagination-newer" href="#">PREV</a>
+      <span class="pagination-inner">
+        <a class="pagination-active" href="#">Budget</a>
+        <a href="#">Hotel</a>
+        <a href="#">Tourgide</a>
+        <a href="#">Transportation</a>
+        <a href="#">Tourgide</a>
+      </span>
+      <a class="pagination-older" href="#">NEXT</a>
+  </div>
+</nav>
+<script>
+$('.pagination-inner a').on('click', function() {
+  $(this).siblings().removeClass('pagination-active');
+  $(this).addClass('pagination-active');
+})
+</script>
