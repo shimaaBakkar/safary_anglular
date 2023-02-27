@@ -11,7 +11,7 @@ import { FooterComponent } from './temp/footer/footer.component';
 const routes: Routes = [
 
   { path: '' , loadChildren: ()  => import('./landingpage/landingpage.module').then(m => m.LandingpageModule) },
-  { path: 'customize_trip', component: CustomTripDetailsComponent},
+  // { path: 'customize_trip', component: CustomTripDetailsComponent},
   { path: 'custo_hotel', component: HotelComponent },
   { path: 'custom_place', component: PlaceComponent},
   { path: 'custom-tourgide', component: CustomTourgideComponent },
@@ -19,16 +19,14 @@ const routes: Routes = [
 
 
   { path: 'places', loadChildren: () => import('./places/places.module').then(m => m.PlacesModule) },
-
   { path: 'AllTrip', loadChildren: () => import('./all-trip/all-trip.module').then(m => m.AllTripModule) },
-
   { path: 'Vehcile', loadChildren: () => import('./vehcile/vehcile.module').then(m => m.VehcileModule) },
-
   { path: 'Tourguide', loadChildren: () => import('./tourguide/tourguide.module').then(m => m.TourguideModule) },
-  // { path: 'placesDesc', component: PlaaceDescComponent},
-  
-
-{path:"**",component:FooterComponent},
+  {path:"**",component:FooterComponent},
+  {
+    path: '', 
+    loadChildren: () => import('./customize-trip/customize-trip.module').then(m => m.CustomizeTripModule)
+  },
 ];
 
 @NgModule({

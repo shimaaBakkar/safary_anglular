@@ -1,9 +1,6 @@
-
-
-  /* 
 #modal{
     margin: 0;
-} */
+}
 #booking::before {
   content: '';
   position: absolute;
@@ -16,7 +13,7 @@
 
 .booking-form {
     /* position:relative; */
-    /* align-items: center; */
+    align-items: center;
   background-color: #fff;
   padding: 30px 30px;
   /* margin: 10; */
@@ -27,15 +24,14 @@
 }
 
 .booking-form .form-group {
-  position: relative;
-  /* margin-bottom: 30px; */
+  margin: 20px 0px;
 }
 
 .booking-form .form-control {
   background-color: #ebecee;
   border-radius: 4px;
   border: none;
-  height: 30px;
+  height: 40px;
   -webkit-box-shadow: none;
   box-shadow: none;
   color: #3e485c;
@@ -64,13 +60,13 @@
   appearance: none;
 }
 
-.booking-form select.form-control+.select-arrow {
+/* .booking-form select.form-control+.select-arrow {
   position: absolute;
   right: 0px;
   bottom: 4px;
   width: 32px;
   line-height: 32px;
-  height: 32px;
+  height: 35px;
   text-align: center;
   pointer-events: none;
   color: rgba(62, 72, 92, 0.3);
@@ -82,7 +78,7 @@
   display: block;
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
-}
+} */
 
 .booking-form .form-label {
   display: inline-block;
@@ -91,57 +87,28 @@
   margin-bottom: 6px;
   margin-left: 7px;
 }
-/* 
-.booking-form .submit-btn {
-  display: inline-block;
-  color: #fff;
-  background-color: #1e62d8;
-  font-weight: 700;
-  padding: 14px 20px;
-  border-radius: 4px;
-  border: none;
-  -webkit-transition: 0.2s all;
-  transition: 0.2s all;
-}
-
-.booking-form .submit-btn:hover,
-.booking-form .submit-btn:focus {
-  opacity: 0.9;
-}
-
-.booking-cta {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-.booking-cta h1 {
-  font-size: 52px;
-  text-transform: uppercase;
-  color: #fff;
-  font-weight: 700;
-} */
 
 .booking-cta p {
   font-size: 16px;
   color: rgba(255, 255, 255, 0.8);
 }
 
-
-
 button {
   background: #CC8C18;
-  color: white;
-  padding: 10px 20px;
+  /* color: white; */
+  color: #3e485c;
+  font-weight: 700;
+  padding: 15px 25px;
   outline: none;
   border: none;
-  border-radius: 30px;
+  border-radius: 20px;
 }
 
-button i {
+/* button i {
   margin-left: 20px;
   font-size: 25px;
 }
 
 button span {
   margin-top: 5px;
-}
+} */

@@ -1,0 +1,49 @@
+
+    <!-- STEPS -->
+    <section class="mt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mx-0">
+                    <form id="msform">
+                        <ul id="progressbar">
+                            <li id="hotel">
+                                <a routerLink="/customize/hotel" class="icon_link"><strong>Hotel</strong></a>
+                            </li>
+                            <li id="Trip" ><strong>
+                                <a routerLink="/customize/place" class="icon_link">Trip</a></strong>
+                            </li>
+                            <li id="Tour_gide"><strong>
+                                <a routerLink="/customize/tourgide" class="icon_link">Tour Gide</a></strong>
+                            </li>
+                            <li id="Transports"><strong>
+                                <a class="icon_link">Transports</a></strong>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<router-outlet></router-outlet>
+
+<nav class="pagination-container" style="margin-left: 200px;">
+    <div class="pagination">
+        <a class="pagination-newer" href="#">PREV</a>
+        <span class="pagination-inner">
+          <a routerLinkActive="active" routerLink="/customize">Budget</a>
+          <a routerLinkActive="active" routerLink="/customize/hotel">Hotel</a>
+          <a routerLinkActive="active" routerLink="/customize/place">Trip</a>
+          <a routerLinkActive="active" routerLink="/customize/tourgide">Tourgide</a>
+          <a routerLinkActive="active" >Transportation</a>
+        </span>
+        <a class="pagination-older" href="#">NEXT</a>
+    </div>
+  </nav>
+
+  <!-- <script>
+  $('.pagination-inner a').on('click', function() {
+    $(this).siblings().removeClass('pagination-active');
+    $(this).addClass('pagination-active');
+  })
+  </script> -->

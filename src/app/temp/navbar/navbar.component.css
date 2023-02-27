@@ -96,10 +96,25 @@ sup {
 sup {
   top: -.5em
 }
+.text-center{
+  font:  sans-serif;
+  font-weight: bold;
+  color: #24416B;
 
+}
 a {
-  color: #0d6efd;
-  text-decoration: underline
+  /* color: #0d6efd; */
+  color: #24416B;
+  text-decoration: underline;
+  font:  sans-serif;
+  font-weight: bold;
+}
+a:hover{
+  background-color: #CC8C18 ;
+  color: #24416B;
+  border-radius: 4px;
+  width: auto;
+
 }
 
 img {
@@ -188,7 +203,8 @@ button {
 }
 
 .form-control::-moz-placeholder {
-  color: #6c757d;
+  /* color: #6c757d; */
+  color: #24416B;
   opacity: 1
 }
 
@@ -532,12 +548,15 @@ a.nav-link.active {
   opacity: 1;
   transform: rotate(-80deg);
   visibility: visible;
-  color: var(--icon-change-color);
+  /* color: var(--icon-change-color); */
+  color:  #CC8C18;
 }
 
 .form input:focus ~ .icon .swap-on {
   opacity: 0;
   visibility: visible;
+  color:  #CC8C18;
+
 }
 
 .form input:valid ~ .icon {
@@ -553,6 +572,8 @@ a.nav-link.active {
 .form input:valid ~ .icon .swap-on {
   opacity: 0;
   visibility: visible;
+  color:  #CC8C18;
+
 }
 
 .form input:valid ~ .close-btn {
