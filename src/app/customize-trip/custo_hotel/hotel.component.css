@@ -274,7 +274,7 @@ input {
   outline: none;
 }
 
-button {
+/* button {
   background: #CC8C18;
   color: white;
   padding: 10px 20px;
@@ -290,6 +290,16 @@ button i {
 
 button span {
   margin-top: 5px;
+} */
+button {
+  background: #CC8C18;
+  /* color: white; */
+  color: #3e485c;
+  font-weight: 700;
+  padding: 15px 25px;
+  outline: none;
+  border: none;
+  border-radius: 20px;
 }
 
 /*------------home------------*/
@@ -347,6 +357,19 @@ p {
   position: relative;
   padding-bottom: 70px;
 }
+
+button {
+  background: #CC8C18;
+  /* color: white; */
+  color: #3e485c;
+  font-weight: 700;
+  padding: 15px 25px;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+}
+
+
 
 .about .right {
   position: relative;
