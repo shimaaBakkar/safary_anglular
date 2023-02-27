@@ -5,18 +5,52 @@ import { CustomTripDetailsComponent } from './customize-trip/custom-trip-details
 import { PlaceComponent } from './customize-trip/custom_place/place.component';
 import { HotelComponent } from './customize-trip/custo_hotel/hotel.component';
 
+import { FooterComponent } from './temp/footer/footer.component';
+
+
 const routes: Routes = [
-  {path: 'customize_trip', component: CustomTripDetailsComponent},
-  {path: 'custo_hotel', component: HotelComponent },
-  {path: 'custom_place', component: PlaceComponent},
-  {path: 'custom-tourgide', component: CustomTourgideComponent },
-  {path: 'custom-trip-details', component: CustomTripDetailsComponent},
+
+  { path: '' , loadChildren: ()  => import('./landingpage/landingpage.module').then(m => m.LandingpageModule) },
+  { path: 'customize_trip', component: CustomTripDetailsComponent},
+  { path: 'custo_hotel', component: HotelComponent },
+  { path: 'custom_place', component: PlaceComponent},
+  { path: 'custom-tourgide', component: CustomTourgideComponent },
+  { path: 'custom-trip-details', component: CustomTripDetailsComponent},
 
 
+  { path: 'places', loadChildren: () => import('./places/places.module').then(m => m.PlacesModule) },
+
+  { path: 'AllTrip', loadChildren: () => import('./all-trip/all-trip.module').then(m => m.AllTripModule) },
+
+  { path: 'Vehcile', loadChildren: () => import('./vehcile/vehcile.module').then(m => m.VehcileModule) },
+
+  { path: 'Tourguide', loadChildren: () => import('./tourguide/tourguide.module').then(m => m.TourguideModule) },
+  // { path: 'placesDesc', component: PlaaceDescComponent},
+  
+
+{path:"**",component:FooterComponent},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes ,{ enableTracing: true })],
+
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+
+
+
+
+
+
+
+
+
+
+// {path: 'home',component:HomeComponent,
+// children:[
+// {  path: 'ourTrip',component : OurTripComponent },
+
+// ]
+//  },

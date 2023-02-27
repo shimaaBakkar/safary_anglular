@@ -1,5 +1,15 @@
 <app-navbar></app-navbar>
-<div class="container">
-<router-outlet></router-outlet>
+
+
+<div>
+    <a class="nav-link mx-2" routerLinkActive="active" routerLink="AllTrip" class="btn btn-warning">AllTrip</a>
+    <a class="nav-link mx-2" routerLinkActive="active" routerLink="places" class="btn btn-warning">Places</a>
+   <a class="nav-link mx-2" routerLinkActive="active" routerLink="Tourguide" class="btn btn-warning">Tourgide</a>
+ <a class="nav-link mx-2" routerLinkActive="active" routerLink="Vehcile" class="btn btn-warning">Transportation</a>
+  <a class="nav-link mx-2" routerLinkActive="active" routerLink="#" class="btn btn-warning">Contact Us</a>
 </div>
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->
+
+<h1>
+<router-outlet></router-outlet>
+</h1>
