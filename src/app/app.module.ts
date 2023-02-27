@@ -37,7 +37,7 @@ import { FooterComponent } from './shared/footer/footer.component';
     BrowserAnimationsModule,
     LandingpageModule,
     AllTripModule,
-    // CustomizeTripModule,
+    CustomizeTripModule,
     DashboardModule,
     HotelsModule,
     PlacesModule,
