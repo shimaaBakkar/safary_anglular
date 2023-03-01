@@ -1235,3 +1235,123 @@ button {
   border: none;
   border-radius: 20px;
 }
+
+
+
+.demo{ background-color: #e7e7e7; }
+.box{
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease 0s;
+}
+.box:hover{ box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+.box .curve1{
+    opacity: 0;
+    position: absolute;
+    right: -2px;
+    top: -100%;
+    z-index: 1;
+    transition:all 0.3s ease-in-out;
+}
+.box:hover .curve1{
+    opacity: 1;
+    top: -1%;
+}
+.box path{ fill:rgba(255,255,255,0.8); }
+.box img{
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease 0s;
+}
+.box:hover img{ filter: blur(2px) grayscale(100%); }
+.box .box-content{
+    color: rgb(190, 143, 23);
+    text-align: right;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 2;
+}
+.box .title{
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.5s ease 0.2s;
+}
+.box .post{
+    color: #000;
+    font-size:14px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin:0 2px 5px 0;
+    opacity: 0;
+    display: block;
+    transform: translateX(-20%);
+    transition: all 0.5s ease 0.2s;
+}
+.box .icon{
+    list-style: none;
+    text-align: right;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.5s ease 0.2s;
+}
+.box:hover .title,
+.box:hover .post,
+.box:hover .icon{
+    opacity: 1;
+    transform: translateX(0);
+}
+.box .icon li{
+    margin: 0 2px;
+    display: inline-block;
+}
+.box .icon li a {
+    color:rgb(190, 143, 23);
+    font-size: 17px;
+    text-align: center;
+    line-height: 32px;
+    height: 35px;
+    width: 35px;
+    border: 2px solid rgb(190, 143, 23);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.3s;
+}
+
+
+
+.box .icon li a:hover {
+    color: #fff;
+    background-color: rgb(190, 143, 23);
+    border-color: #fff;
+    box-shadow: 0 0 5px #000;
+}
+.box .curve2{
+    opacity: 0;
+    position: absolute;
+    left: -2px;
+    bottom: -100%;
+    transition:all 0.3s ease-in-out;
+}
+.box:hover .curve2{
+    opacity: 1;
+    bottom: -2px;
+}
+@media only screen and (max-width:990px){
+    .box{ margin-bottom: 30px; }
+}
+@media only screen and (max-width:479px){
+    .box .title{ font-size: 18px; }
+}
