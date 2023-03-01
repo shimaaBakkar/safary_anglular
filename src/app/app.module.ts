@@ -17,19 +17,13 @@ import { RegisterModule } from './register/register.module';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
-
-
-
-
-
 @NgModule({
   declarations: [
  
     AppComponent,
        NavbarComponent,
        FooterComponent,
-
-    
+   
   ],
   imports: [
     BrowserModule,
@@ -52,3 +46,6 @@ import { FooterComponent } from './shared/footer/footer.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
