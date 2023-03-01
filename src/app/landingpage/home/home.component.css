@@ -1,0 +1,10 @@
+.xheader {
+    width: 100vw;
+    background: black;
+    overflow: hidden;
+}
+
+.ximg {
+   object-fit: cover;
+   opacity: 0.4;
+}

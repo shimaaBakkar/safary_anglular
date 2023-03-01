@@ -35,7 +35,7 @@
                   <option>5</option>
 
                 </select>
-                <span class="select-arrow"></span>
+                <!-- <span class="select-arrow"></span> -->
               </div>
             </div>
             <div class="col-sm-4">
@@ -48,7 +48,7 @@
                   <option>4</option>
                   <option>5</option>
                 </select>
-                <span class="select-arrow"></span>
+                <!-- <span class="select-arrow"></span> -->
               </div>
             </div>
             <div class="col-sm-4">
@@ -61,15 +61,25 @@
                   <option>4</option>
                   <option>5</option>
                 </select>
-                <span class="select-arrow"></span>
+                <!-- <span class="select-arrow"></span> -->
               </div>
             </div>
           </div>
           <!-- submit -->
-          <div class="form-btn d-grid gap-2 d-md-flex justify-content-md-end">
-            <button class="submit-btn m-3"><a routerLink="/custo_hotel">Confirm</a></button>
-          </div>
+          <!-- <div class="form-btn d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type="submit" class="submit-btn m-3" routerLink="/custo_hotel">Confirm</button>
+          </div> -->
+          
         </form>
+
+        <div class=" d-grid gap-2 d-md-flex justify-content-md-end">
+          <!-- <button class=" m-3" routerLink="/custo_hotel">Confirm</button> -->
+          <a class="btn submit-btn m-3" [routerLink]="['/customize/hotel']">Confirm</a>
+          
+        </div>
+        <!-- <div class="form-btn d-grid gap-2 d-md-flex justify-content-md-end">
+         <input type="button"> <a  class="submit-btn m-3" routerLink="/custo_hotel">Confirm</a>
+        </div> -->
       </div>
     </div>
   </section>
