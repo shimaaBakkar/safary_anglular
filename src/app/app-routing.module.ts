@@ -6,6 +6,7 @@ import { CustomTripDetailsComponent } from './customize-trip/custom-trip-details
 import { PlaceComponent } from './customize-trip/custom_place/place.component';
 import { HotelComponent } from './customize-trip/custo_hotel/hotel.component';
 import {AllHotelsComponent} from './hotels/all-hotels/all-hotels.component'
+import {RoomComponent} from './hotels/room/room.component'
 import { FooterComponent } from './temp/footer/footer.component';
 
 
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
   { path: 'payment', loadChildren: () => import('./payment/payment.module').then(m => m.PaymentModule) },
   {path: 'hotels', component:AllHotelsComponent},
+  {path: 'room', component: RoomComponent},
   {path:"**",component:FooterComponent},//can make a notfound component!
 ];
 @NgModule({
