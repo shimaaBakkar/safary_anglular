@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tourguidecard',
@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./tourguidecard.component.css']
 })
 export class TourguidecardComponent {
+  @Input() Tourguide={
+    id: '',
+    title: '',
+    price: '',
+    category: '',
+    description: '',
+    image: '',
+  }
 
 }

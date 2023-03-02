@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Tourguide } from 'src/app/interfaces/tourguide';
+import { TourguideService } from 'src/app/services/tourguide.service';
 
 @Component({
   selector: 'app-tourguidepage',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./tourguidepage.component.css']
 })
 export class TourguidepageComponent {
-  placeCards = new Array(12);
+  TourguideList:Array <Tourguide> =[];
+  
+constructor(private TourguideListServices :TourguideService){};
+
+ngOnInit():void{
+  
+  this.TourguideListServices.getTourGuidetlist().subscribe(
+    res => {this.TourguideList=res}
+  )
+}
 }

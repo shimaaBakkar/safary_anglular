@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tripcard',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./tripcard.component.css']
 })
 export class TripcardComponent {
-
+  @Input() Trip={
+    id: '',
+    title: '',
+    price: '',
+    category: '',
+    description: '',
+    image: '',
+  }
 }

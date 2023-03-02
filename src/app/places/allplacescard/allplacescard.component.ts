@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,Input } from '@angular/core';
 
 @Component({
   selector: 'app-allplacescard',
@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./allplacescard.component.css']
 })
 export class AllplacescardComponent {
+  @Input() places={
+    id: '',
+    // title: '',
+    // price: '',
+    address: '',
+    // description: '',
+    // image: '',
+  }
 
 }
+

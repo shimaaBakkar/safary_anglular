@@ -11,6 +11,7 @@ import { FooterComponent } from './temp/footer/footer.component';
 
 const routes: Routes = [
 
+
   { path: '' , loadChildren: ()  => import('./landingpage/landingpage.module').then(m => m.LandingpageModule) },
   // { path: 'customize_trip', component: CustomTripDetailsComponent},
   { path: 'custo_hotel', component: HotelComponent },
@@ -32,6 +33,9 @@ const routes: Routes = [
   { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
 
   { path: 'payment', loadChildren: () => import('./payment/payment.module').then(m => m.PaymentModule) },
+
+
+  { path: 'registration', loadChildren: () => import('./registration/registration.module').then(m => m.RegistrationModule) },
 
 
 

@@ -13,9 +13,11 @@ import { HotelsModule } from './hotels/hotels.module';
 
 import { TourguideModule } from './tourguide/tourguide.module';
 import { VehcileModule } from './vehcile/vehcile.module';
-import { RegisterModule } from './register/register.module';
+// import { RegisterModule } from './register/register.module';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { Router } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -41,14 +43,17 @@ import { FooterComponent } from './shared/footer/footer.component';
     DashboardModule,
     HotelsModule,
     PlacesModule,
-    RegisterModule,
+    // RegisterModule,
     TourguideModule,
     VehcileModule,
-  
+
 
   ],
+
 
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+ }

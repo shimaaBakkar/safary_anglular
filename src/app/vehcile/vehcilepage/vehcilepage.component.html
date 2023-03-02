@@ -81,15 +81,12 @@
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
     <div class="container">
         <div class="row  g-5">
-            <div class="col-md-4 col-sm-6" *ngFor="let card of placeCards;">
+            <div class="col-md-4 col-sm-6" *ngFor="let Vehcile of VehcileList;">
 
-                <app-vehcilecard></app-vehcilecard>
+                <app-vehcilecard [Vehcile]="Vehcile"></app-vehcilecard>
 
             </div>
         </div>
-
-
-
     </div>
 
 
