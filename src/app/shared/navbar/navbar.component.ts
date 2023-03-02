@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+buy(arg0: any) {
+throw new Error('Method not implemented.');
+}
+hotel: any;
 
 }

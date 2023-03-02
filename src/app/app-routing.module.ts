@@ -5,7 +5,10 @@ import { CustomTourgideComponent } from './customize-trip/custom-tourgide/custom
 import { CustomTripDetailsComponent } from './customize-trip/custom-trip-details/custom-trip-details.component';
 import { PlaceComponent } from './customize-trip/custom_place/place.component';
 import { HotelComponent } from './customize-trip/custo_hotel/hotel.component';
+import {AllHotelsComponent} from './hotels/all-hotels/all-hotels.component'
 import { FooterComponent } from './temp/footer/footer.component';
+
+
 const routes: Routes = [
   { path: '' , loadChildren: ()  => import('./landingpage/landingpage.module').then(m => m.LandingpageModule) },
   // { path: 'customize_trip', component: CustomTripDetailsComponent},
@@ -24,7 +27,8 @@ const routes: Routes = [
   },
   { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
   { path: 'payment', loadChildren: () => import('./payment/payment.module').then(m => m.PaymentModule) },
-  {path:"**",component:FooterComponent},
+  {path: 'hotels', component:AllHotelsComponent},
+  {path:"**",component:FooterComponent},//can make a notfound component!
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes ,{ enableTracing: true })],
