@@ -16,7 +16,9 @@ import { VehcileModule } from './vehcile/vehcile.module';
 import { RegisterModule } from './register/register.module';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { ReactiveFormsModule } from '@angular/forms';
+// import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -39,13 +41,17 @@ import { ReactiveFormsModule } from '@angular/forms';
     RegisterModule,
     TourguideModule,
     VehcileModule,
+    FormsModule,
     ReactiveFormsModule,
-  
-
   ],
 
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  // exports: [
+  //   CommonModule,
+  //   FormsModule,
+  //   ReactiveFormsModule
+  // ]
 })
 export class AppModule { }
 

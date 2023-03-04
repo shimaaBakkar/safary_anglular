@@ -2,13 +2,17 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserRegComponent } from './user-reg.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 describe('UserRegComponent', () => {
   let component: UserRegComponent;
   let fixture: ComponentFixture<UserRegComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserRegComponent ]
+      declarations: [ UserRegComponent ],
+      imports: [ReactiveFormsModule],  // Also add it to 'imports' array
     })
     .compileComponents();
 

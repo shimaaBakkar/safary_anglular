@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserRegComponent } from './user-reg/user-reg.component';
 import { Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -15,6 +16,8 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class RegisterModule { }
