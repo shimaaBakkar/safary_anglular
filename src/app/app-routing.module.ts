@@ -12,8 +12,11 @@ import { HotelComponent } from './customize-trip/custo_hotel/hotel.component'; /
 import { AllHotelsComponent } from './hotels/all-hotels/all-hotels.component';
 import { RoomComponent } from './hotels/room/room.component';
 
-// 
+// register
 import { UserRegComponent } from './register/user-reg/user-reg.component';
+// import {RegisterRoutingModule} from './register/register-routing.module';
+
+
 import { FooterComponent } from './temp/footer/footer.component';
 
 
@@ -36,7 +39,7 @@ const routes: Routes = [
 
   // hotels
   { path: 'hotels', component: AllHotelsComponent },
-  // { path: 'hotels/room', component: RoomComponent },
+  { path: 'hotels/room', component: RoomComponent },
   {
     path: 'hotels',
     loadChildren: () => import('./hotels/hotels.module').then(m => m.HotelsModule)
@@ -46,8 +49,13 @@ const routes: Routes = [
   { path: 'about', component: AboutusComponent },
   { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
 
-  { path: 'payment', loadChildren: () => import('./payment/payment.module').then(m => m.PaymentModule) },
+// register
   { path: 'user-reg', component: UserRegComponent },
+  // {path: 'register',
+  // loadChildren: () => import('./register/register-routing.module').then(m => m.RegisterRoutingModule)
+  // },
+  
+  { path: 'payment', loadChildren: () => import('./payment/payment.module').then(m => m.PaymentModule) },
   { path: "**", component: FooterComponent },//can make a notfound component!
 ];
 @NgModule({

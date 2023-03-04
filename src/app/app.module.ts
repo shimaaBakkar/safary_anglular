@@ -16,6 +16,7 @@ import { VehcileModule } from './vehcile/vehcile.module';
 import { RegisterModule } from './register/register.module';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { FooterComponent } from './shared/footer/footer.component';
     RegisterModule,
     TourguideModule,
     VehcileModule,
+    ReactiveFormsModule,
   
 
   ],
