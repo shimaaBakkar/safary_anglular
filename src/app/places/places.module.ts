@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { PlacesRoutingModule } from './places-routing.module';
 import { PlacesComponent } from './places.component';
 import { PlaaceDescComponent } from './plaace-desc/plaace-desc.component';

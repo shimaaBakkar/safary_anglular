@@ -796,3 +796,44 @@ a {
       padding-left: calc(var(--nav-width) + 188px)
   }
 } */
+
+
+
+
+
+
+
+
+header .sticky_logo {
+  display: none;
+}
+
+header.sticky .sticky_logo {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin-top: -10px;
+}
+
+header.sticky {
+  z-index: 9999;
+  position: fixed;
+  width: 100%;
+  background: #313538;
+  transition: 0.5s;
+  height: 12vh;
+  transition: 0.5s;
+  top: 0;
+  padding: 30px 0 0 0;
+}
+
+header.sticky ul li a {
+  color: white;
+}
+
+
+
+
+
+
+
