@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 // import { LandingpageComponent } from './landingpage.component';
 
 const routes: Routes = [
-  { path: 'AswanTrip', component:  HomeComponent,
+  { path: 'Safary Aswan', component:  HomeComponent,
 }
 
 ];

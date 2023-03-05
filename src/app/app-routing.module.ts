@@ -28,6 +28,7 @@ import { FooterComponent } from './temp/footer/footer.component';
 
 const routes: Routes = [
   { path: '', loadChildren: () => import('./landingpage/landingpage.module').then(m => m.LandingpageModule) },
+  // {path : "" ,redirectTo :"AswanTrip",pathMatch:"full"},
   { path: 'places', loadChildren: () => import('./places/places.module').then(m => m.PlacesModule) },
   { path: 'AllTrip', loadChildren: () => import('./all-trip/all-trip.module').then(m => m.AllTripModule) },
   { path: 'Vehcile', loadChildren: () => import('./vehcile/vehcile.module').then(m => m.VehcileModule) },

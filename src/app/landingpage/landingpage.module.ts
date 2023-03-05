@@ -5,7 +5,15 @@ import { LandingpageRoutingModule } from './landingpage-routing.module';
 import { LandingpageComponent } from './landingpage.component';
 import { HomeComponent } from './home/home.component';
 import { OurTripComponent } from './our-trip/our-trip.component';
+import { RouterModule, Routes } from '@angular/router';
 
+
+const routes: Routes = [
+  { path: "", component: HomeComponent , children :[
+    {path :"" ,redirectTo :"Safary Aswan",pathMatch:"full"},
+  ]
+},
+]
 
 @NgModule({
   declarations: [
@@ -15,11 +23,15 @@ import { OurTripComponent } from './our-trip/our-trip.component';
   ],
   imports: [
     CommonModule,
-    LandingpageRoutingModule
+    LandingpageRoutingModule,
+    RouterModule.forChild(routes)
+
   ],
   exports:[
     HomeComponent,
-    OurTripComponent
+    OurTripComponent,
+    RouterModule
   ]
 })
 export class LandingpageModule { }
+RouterModule.forChild(routes)
