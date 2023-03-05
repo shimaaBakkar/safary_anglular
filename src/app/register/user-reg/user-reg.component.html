@@ -1,9 +1,11 @@
 <section class="m-5">
 <div class="container right-panel-active">
     <!-- Sign Up -->
-    <div class="container__form container--signup">
+    <div class="container container__form ">
         <!-- method="post" enctype="multipart/form-data" -->
-        <form [formGroup]="UserRegForm" class="form" id="form1">
+        <form [formGroup]="UserRegForm"  class="form" id="form1">
+            <!-- (ngSubmit)="userSubmit()" -->
+            <!-- <div class="container"> -->
             <h2 class="form__title">Sign Up</h2>
             <div class="profImg">
                 <label for="files">
@@ -12,35 +14,80 @@
                         accept="image/png, image/gif, image/jpeg" />
                 </label>
             </div>
-            <br>
-            <input type="text" formControlName="userName" placeholder="Your Name" name="userName" class="input" required />
-            <br>
+            <!-- userName -->
+            <div>
+                <input type="text" formControlName="userName" placeholder="Your Name" name="userName"
+                 class="input" [class.is-invalid]="userName?.invalid" [class.is-valid]="userName?.valid"/>
+                  <!-- validation -->
+                <div class="alert alert-danger" [hidden]="userName?.valid || userName?.untouched" >
+                    <small *ngIf="userName?.errors?.['required']">
+                        userName is required!
+                    </small>
+                    <small *ngIf="userName?.errors?.['pattern']">
+                        userName must be 3 letters at least! ,
+                        <b> {{userName?.errors?.['pattern'].actualValue}} </b> user Name dosn't match!
+                    </small>
+                </div>
+            </div>
+            <!-- gender -->
             <div>
                 <span>Male<input class="specifyColor" type="radio" name="gender" id="male" value="male"
                         checked></span>
+                        <br>
                 <span>Female<input class="specifyColor" type="radio" name="gender" id="female"
                         value="female"></span>
             </div>
-            <input type="email" formControlName="email" placeholder="Email" name="email" class="input" required />
-            <br>
-            <input type="password"  formControlName="password" placeholder="Password" name="password" class="input" required />
-            <br>
-            <button type="submit" class="btn">Sign Up</button>
+            <!-- email -->
+            <div>
+                <input type="email" formControlName="email" placeholder="Email" 
+                name="email" class="input" required />
+                 <!-- validation -->
+                <div class="alert alert-danger" [hidden]="email?.valid || email?.untouched" >
+                    <small *ngIf="email?.errors?.['required']">
+                        email is required!
+                    </small>
+                    <small *ngIf="email?.errors?.['pattern']">
+                        email dosn't match!
+                        <!-- <b> {{email?.errors?.['pattern'].actualValue}} </b>email dosn't match! -->
+                    </small>
+                </div>
+            </div>
+            <!-- password -->
+            <div>
+                <input type="password"  formControlName="password"
+                 placeholder="Password" name="password" class="input" required />
+                    <!-- validation -->
+                 <div class="alert alert-danger" [hidden]="password?.valid || password?.untouched" >
+                    <small *ngIf="email?.errors?.['required']">
+                        password is required!
+                    </small>
+                    <small *ngIf="password?.errors?.['pattern']">
+                        password must be 8 character at least!
+                        <br>
+                         Password should include  alphanumeric and special character!
+                    </small>
+                </div>
+            </div>
+            <!-- submit -->
+            <div>
+                <button [disabled]="UserRegForm.invalid" type="submit" (click)="filluserForm" class="btn">Sign Up</button>
+            </div>
             <a href="#" class="link" id="signIn">Already a user </a>
 
             <!-- <div>
                 {{UserRegForm.get('userName')?.errors | json}}
             </div> -->
+        <!-- </div> -->
         </form>
     </div>
 
     <!-- test -->
     <div>
-        <h3>to be removed "for test" </h3>
+        <h3>to be removed "for test registeration" </h3>
         <div>
             {{UserRegForm.value | json}}
             <br>
-            {{UserRegForm.get('userName')?.errors | json}}
+            {{userName?.errors | json}}
         </div>
     </div>
 
@@ -51,26 +98,31 @@
             <input type="email" placeholder="Email" name="email" class="input" required />
             <input type="password" placeholder="Password" name="pass" class="input" required />
             <a href="#" class="link">Forgot your password?</a>
-            <button class="btn">Sign In</button>
+            <button class="btn" (click)="filluserForm">Sign In</button>
             <a href="#" class="link" id="signUp">Don't have an account Yet?</a>
         </form>
     </div> -->
 
     <!-- Overlay -->
-    <!-- <div class="container__overlay">
+    <div class="container__overlay">
 
         <div class="overlay">
             <div class="overlay__panel overlay--left">
-                <img src="./assets/imgs/sign-up-page-1886582-1598253.png" alt="">
-
-
+                <!-- <img src="./assets/imgs/sign-up-page-1886582-1598253.png" alt=""> -->
             </div>
 
             <div class="overlay__panel overlay--right">
-
-                <img src="./assets/imgs/6a7458116bc7b6b81a23a258b7488246.jpg" alt="">
-
+                <!-- <img src="./assets/imgs/6a7458116bc7b6b81a23a258b7488246.jpg" alt=""> -->
             </div>
+        </div>
+    </div>
+
+    <!-- <div>
+        <h3>to be removed "for test login" </h3>
+        <div>
+            {{UserRegForm.value | json}}
+            <br>
+            {{userName?.errors | json}}
         </div>
     </div> -->
 </div>

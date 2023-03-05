@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UserRegComponent } from './user-reg/user-reg.component';
 import { Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HotelOwnerRegComponent } from './hotel-owner-reg/hotel-owner-reg.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    UserRegComponent
+    UserRegComponent,
+    HotelOwnerRegComponent
   ],
   imports: [
     CommonModule,
