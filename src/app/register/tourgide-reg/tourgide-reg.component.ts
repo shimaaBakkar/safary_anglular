@@ -19,7 +19,9 @@ export class TourgideRegComponent implements OnInit{
       }),
       Tourgideemail: new FormControl('', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
       Tourgidepassword: new FormControl('', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]),
-      LicenseNumber: new FormControl('', [Validators.required, Validators.pattern('{6,}')]),
+      // language: this.form = fb.group({
+      //   language: ['', Validators.required]
+      // }),
     });
   }
 
@@ -39,8 +41,8 @@ export class TourgideRegComponent implements OnInit{
     return this.TourgideRegForm.get('Tourgidepassword');
   }
 
-  get LicenseNumber() {
-    return this.TourgideRegForm.get('LicenseNumber');
+  get language() {
+    return this.TourgideRegForm.get('language');
   }
 
 

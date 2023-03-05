@@ -37,12 +37,12 @@
                         <div class="row">
                             <div class="col-md-5">
                                 <input required type="radio" name="gender" value="male" class="specifyColor"
-                                    UserRegForm="gender">
+                                    TourgideRegForm="gender">
                                 <label class="form-check-label">male</label>
                             </div>
                             <div class="col-md-5">
                                 <input required type="radio" name="gender" value="female" class="specifyColor"
-                                    UserRegForm="gender">
+                                    TourgideRegForm="gender">
                                 <label class="form-check-label">Female</label>
                             </div>
                         </div>
@@ -51,28 +51,7 @@
                                 gender is required!
                             </small>
                         </div>
-                        <!-- <small class="form-text text-danger"
-                            *ngIf="(gender.controls['gender'].errors?.required) && gender.controls['gender'].touched">Please
-                            choose a gender</small> -->
                     </div>
-                    <br>
-                    <!-- <label>
-                        <input type="radio" class="specifyColor" id="male" value="Male"
-                         UserRegForm="gender">
-                          <span>male</span>
-                      </label>
-                      <br>
-                      <label>
-                        <input type="radio" class="specifyColor" id="female" value="Female"
-                          UserRegForm="gender">
-                          <span>female</span>
-                      </label>
-                      <br> -->
-                    <!-- <span>Male<input class="specifyColor" type="radio" name="gender" id="male" value="male"
-                            checked></span>
-                            <br>
-                    <span>Female<input class="specifyColor" type="radio" name="gender" id="female"
-                            value="female"></span> -->
                 </div>
                 <!-- email -->
                 <div>
@@ -105,38 +84,24 @@
                         </small>
                     </div>
                 </div>
-                <!-- License -->
-                <div>
-                    <input type="text" formControlName="LicenseNumber" placeholder="License" name="LicenseNumber"
-                        class="input" required />
-                    <!-- validation -->
-                    <div class="alert alert-danger" [hidden]="LicenseNumber?.valid || LicenseNumber?.untouched">
-                        <small *ngIf="LicenseNumber?.errors?.['required']">
-                            License Number is required!
-                        </small>
-                        <small *ngIf="LicenseNumber?.errors?.['pattern']">
-                            License Number must be 6 character at least!
-                        </small>
-                    </div>
-                </div>
                 <!-- lang -->
                 <div class="lang">
                     Languages :
                     <span>
                         Arabic
-                        <input class="specifyColor" type="checkbox" name="arabic" id="arabic" value="arabic">
+                        <input class="specifyColor" type="checkbox" name="arabic" id="arabic" value="Arabic" TourgideRegForm="language">
                     </span>
                     <span>
                         English
-                        <input class="specifyColor" type="checkbox" name="eng" id="eng" value="eng">
+                        <input class="specifyColor" type="checkbox" name="eng" id="eng" value="English" TourgideRegForm="language">
                     </span>
                     <span>
                         Spanish
-                        <input class="specifyColor" type="checkbox" name="spanish" id="spanish" value="spanish">
+                        <input class="specifyColor" type="checkbox" name="spanish" id="spanish" value="spanish" TourgideRegForm="language">
                     </span>
                     <span>
                         Italian
-                        <input class="specifyColor" type="checkbox" name="italien" id="italien" value="italien">
+                        <input class="specifyColor" type="checkbox" name="italien" id="italien" value="Italian" TourgideRegForm="language">
                     </span>
                 </div>
                 <!-- submit -->
@@ -145,11 +110,6 @@
                         class="btn">Sign Up</button>
                 </div>
                 <a href="#" class="link" id="signIn">Already a user </a>
-
-                <!-- <div>
-                    {{UserRegForm.get('userName')?.errors | json}}
-                </div> -->
-                <!-- </div> -->
             </form>
         </div>
 
@@ -192,7 +152,7 @@
         <!-- <div>
             <h3>to be removed "for test login" </h3>
             <div>
-                {{UserRegForm.value | json}}
+                {{TourgideRegForm.value | json}}
                 <br>
                 {{userName?.errors | json}}
             </div>

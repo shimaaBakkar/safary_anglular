@@ -37,12 +37,12 @@
                         <div class="row">
                             <div class="col-md-5">
                                 <input required type="radio" name="gender" value="male" class="specifyColor"
-                                    UserRegForm="gender">
+                                    HotelOwnerRegComponent="gender">
                                 <label class="form-check-label">male</label>
                             </div>
                             <div class="col-md-5">
                                 <input required type="radio" name="gender" value="female" class="specifyColor"
-                                    UserRegForm="gender">
+                                    HotelOwnerRegComponent="gender">
                                 <label class="form-check-label">Female</label>
                             </div>
                         </div>
@@ -56,23 +56,6 @@
                             choose a gender</small> -->
                     </div>
                     <br>
-                    <!-- <label>
-                        <input type="radio" class="specifyColor" id="male" value="Male"
-                         UserRegForm="gender">
-                          <span>male</span>
-                      </label>
-                      <br>
-                      <label>
-                        <input type="radio" class="specifyColor" id="female" value="Female"
-                          UserRegForm="gender">
-                          <span>female</span>
-                      </label>
-                      <br> -->
-                    <!-- <span>Male<input class="specifyColor" type="radio" name="gender" id="male" value="male"
-                            checked></span>
-                            <br>
-                    <span>Female<input class="specifyColor" type="radio" name="gender" id="female"
-                            value="female"></span> -->
                 </div>
                 <!-- email -->
                 <div>
@@ -129,7 +112,7 @@
                 <a href="#" class="link" id="signIn">Already a user </a>
 
                 <!-- <div>
-                    {{UserRegForm.get('userName')?.errors | json}}
+                    {{HotelOwnerRegComponent.get('userName')?.errors | json}}
                 </div> -->
                 <!-- </div> -->
             </form>
@@ -174,7 +157,7 @@
         <!-- <div>
             <h3>to be removed "for test login" </h3>
             <div>
-                {{UserRegForm.value | json}}
+                {{HotelOwnerRegComponent.value | json}}
                 <br>
                 {{userName?.errors | json}}
             </div>

@@ -67,7 +67,7 @@ export class HotelOwnerRegComponent implements OnInit {
   // SUBMIT FUNCTION
   // userSubmit()
   // {
-  //   let userModel: IUser = <IUser> UserRegForm.value;
+  //   let userModel: IUser = <IUser> HotelOwnerRegComponent.value;
   // call [API] & send [userModel]
 
 
@@ -75,5 +75,5 @@ export class HotelOwnerRegComponent implements OnInit {
   // console.log(userModel); => return object of userModel =>> (well done ^-^, its ready to send to backend ^-^);
 
   // }
-  // UserRegForm!: FormGroup;
+  // HotelOwnerRegComponent!: FormGroup;
 }

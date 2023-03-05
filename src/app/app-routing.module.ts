@@ -15,11 +15,15 @@ import { RoomComponent } from './hotels/room/room.component';
 // register
 import { UserRegComponent } from './register/user-reg/user-reg.component';
 import { HotelOwnerRegComponent } from './register/hotelOwner-reg/hotelOwner-reg.component';
+import { DriverComponent } from './register/driver/driver.component';
+import { TourgideRegComponent } from './register/tourgide-reg/tourgide-reg.component';
 
-// import {RegisterRoutingModule} from './register/register-routing.module';
+
+import {RegisterRoutingModule} from './register/register-routing.module';
 
 
 import { FooterComponent } from './temp/footer/footer.component';
+
 
 
 const routes: Routes = [
@@ -52,8 +56,17 @@ const routes: Routes = [
   { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
 
   // register
-  { path: 'user-reg', component: UserRegComponent },
-  { path: 'hotelOwner-reg', component: HotelOwnerRegComponent },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register-routing.module').then(m => m.RegisterRoutingModule)
+  },
+  {path: 'user-reg', component: UserRegComponent},
+  {path: 'hotelOwner-reg', component: HotelOwnerRegComponent},
+  {path: 'tourgideReg-reg', component: TourgideRegComponent},
+  {path: 'driver-reg', component: DriverComponent},
+  
+  // { path: 'user-reg', component: UserRegComponent },
+  // { path: 'hotelOwner-reg', component: HotelOwnerRegComponent },
   // {path: 'register',
   // loadChildren: () => import('./register/register-routing.module').then(m => m.RegisterRoutingModule)
   // },
