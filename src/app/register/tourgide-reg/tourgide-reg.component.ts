@@ -47,7 +47,6 @@ export class TourgideRegComponent implements OnInit{
 
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 
   fillTourgideRegForm() {

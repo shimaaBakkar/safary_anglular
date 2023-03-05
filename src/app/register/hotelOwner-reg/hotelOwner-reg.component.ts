@@ -15,13 +15,13 @@ export class HotelOwnerRegComponent implements OnInit {
   constructor(fb: FormBuilder) {
     this.HotelOwnerRegForm = new FormGroup({
 
-      HotelOwnerName: new FormControl('', [Validators.required, Validators.pattern('[A-Za-z]{3,}')]),
+      HotelOwnerName: new FormControl('', [Validators.required, Validators.pattern(/[A-Za-z]{3,}/)]),
       gender: this.form = fb.group({
         gender: ['', Validators.required]
       }),
-      HotelOwneremail: new FormControl('', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
-      HotelOwnerpassword: new FormControl('', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]),
-      CommercialRegNumber: new FormControl('', [Validators.required, Validators.pattern('{15,}')]),
+      HotelOwneremail: new FormControl('', [Validators.required, Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$/)]),
+      HotelOwnerpassword: new FormControl('', [Validators.required, Validators.pattern(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}/)]),
+      CommercialRegNumber: new FormControl('', [Validators.required, Validators.pattern(/[0-9]{15}/)]),
 
     });
   }
@@ -48,7 +48,6 @@ export class HotelOwnerRegComponent implements OnInit {
 
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 
   fillHotelOwnerRegForm() {

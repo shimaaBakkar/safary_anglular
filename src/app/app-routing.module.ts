@@ -43,9 +43,6 @@ const routes: Routes = [
     loadChildren: () => import('./customize-trip/customize-trip.module').then(m => m.CustomizeTripModule)
   },
 
-  // hotels
-  { path: 'hotels', component: AllHotelsComponent },
-  { path: 'hotels/room', component: RoomComponent },
   {
     path: 'hotels',
     loadChildren: () => import('./hotels/hotels.module').then(m => m.HotelsModule)

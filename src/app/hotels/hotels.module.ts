@@ -10,20 +10,17 @@ import { IncredibleCounterComponent } from './all-hotels/incredible-counter/incr
 import { ExclusiveOfferComponent } from './all-hotels/exclusive-offer/exclusive-offer.component';
 import { HotelsCardComponent } from './all-hotels/hotels-card/hotels-card.component';
 import { RoomCardComponent } from './room/room-card/room-card.component';
-import { Routes } from '@angular/router';
+import { RouterEvent, Routes, RouterModule } from '@angular/router';
 // import { AllHotelsComponent } from './all-hotels/all-hotels.component';
 
 
 const routes: Routes = [
-  { path: "", redirectTo: "hotels", pathMatch: "full" },
-  {
-    path: 'hotels', component: AllHotelsComponent, children: [
-      {path: "", redirectTo: "hotels", pathMatch: "full"},
-      // {path: "room", component: RoomComponent}
-      { path: 'hotels/room', component: RoomComponent }
+  { path: "", component: AllHotelsComponent, },
+  // {path: "room", component: RoomComponent}
+  { path: 'room', component: RoomComponent }
 
-    ]
-  },
+
+
 ];
 
 @NgModule({
@@ -40,7 +37,9 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    // HotelRoutingModule
-  ]
+    RouterModule.forChild(routes)
+  
+  ],
+  exports:[RouterModule]
 })
 export class HotelsModule { }
