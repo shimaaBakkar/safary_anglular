@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -10,10 +10,19 @@ import { FormControl, FormGroup } from '@angular/forms';
 
 export class UserRegComponent implements OnInit {
   UserRegForm!: FormGroup;
-  constructor() {
+  form: FormGroup<{ gender: FormControl<string | null>; }>;
+  constructor(fb: FormBuilder) {
     this.UserRegForm = new FormGroup({
       userName: new FormControl('', [Validators.required, Validators.pattern('[A-Za-z]{3,}')]),
       // gender: new FormControl('') ,
+      // this.form = fb.group
+      // gender: new FormGroup("", Validators.required),
+      gender: this.form = fb.group({
+        gender: ['', Validators.required]
+      }),
+      // gender: new FormGroup({
+      //   gender: ['', Validators.required]
+      // }),
       email: new FormControl('', [Validators.required,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
       password: new FormControl('', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]),
     });
@@ -22,6 +31,11 @@ export class UserRegComponent implements OnInit {
   get userName()
   {
     return this.UserRegForm.get('userName');
+  }
+
+  get gender()
+  {
+    return this.UserRegForm.get('gender');
   }
 
   get email()

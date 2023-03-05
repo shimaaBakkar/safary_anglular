@@ -1,5 +1,5 @@
 <section class="m-5">
-<div class="container right-panel-active">
+<div class="container">
     <!-- Sign Up -->
     <div class="container container__form ">
         <!-- method="post" enctype="multipart/form-data" -->
@@ -31,11 +31,46 @@
             </div>
             <!-- gender -->
             <div>
-                <span>Male<input class="specifyColor" type="radio" name="gender" id="male" value="male"
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <input required type="radio" name="gender" value="male" class="specifyColor"
+                            UserRegForm="gender">
+                            <label class="form-check-label">male</label>
+                        </div>
+                        <div class="col-md-5">
+                            <input required type="radio" name="gender" value="female" class="specifyColor"
+                            UserRegForm="gender">
+                            <label class="form-check-label">Female</label>
+                        </div>
+                    </div>
+                    <div class="alert alert-danger" [hidden]="gender?.valid || gender?.untouched" >
+                        <small *ngIf="gender?.errors?.['required']">
+                            gender is required!
+                        </small>
+                    </div>
+                    <!-- <small class="form-text text-danger"
+                        *ngIf="(gender.controls['gender'].errors?.required) && gender.controls['gender'].touched">Please
+                        choose a gender</small> -->
+                </div>
+                <br>
+                <!-- <label>
+                    <input type="radio" class="specifyColor" id="male" value="Male"
+                     UserRegForm="gender">
+                      <span>male</span>
+                  </label>
+                  <br>
+                  <label>
+                    <input type="radio" class="specifyColor" id="female" value="Female"
+                      UserRegForm="gender">
+                      <span>female</span>
+                  </label>
+                  <br> -->
+                <!-- <span>Male<input class="specifyColor" type="radio" name="gender" id="male" value="male"
                         checked></span>
                         <br>
                 <span>Female<input class="specifyColor" type="radio" name="gender" id="female"
-                        value="female"></span>
+                        value="female"></span> -->
             </div>
             <!-- email -->
             <div>
@@ -104,18 +139,18 @@
     </div> -->
 
     <!-- Overlay -->
-    <div class="container__overlay">
+    <!-- <div class="container__overlay"> -->
 
-        <div class="overlay">
+        <!-- <div class="overlay">
             <div class="overlay__panel overlay--left">
-                <!-- <img src="./assets/imgs/sign-up-page-1886582-1598253.png" alt=""> -->
+                <img src="./assets/imgs/sign-up-page-1886582-1598253.png" alt="">
             </div>
 
             <div class="overlay__panel overlay--right">
-                <!-- <img src="./assets/imgs/6a7458116bc7b6b81a23a258b7488246.jpg" alt=""> -->
+                <img src="./assets/imgs/6a7458116bc7b6b81a23a258b7488246.jpg" alt="">
             </div>
-        </div>
-    </div>
+        </div> -->
+    <!-- </div> -->
 
     <!-- <div>
         <h3>to be removed "for test login" </h3>
