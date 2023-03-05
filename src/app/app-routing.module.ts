@@ -14,6 +14,8 @@ import { RoomComponent } from './hotels/room/room.component';
 
 // register
 import { UserRegComponent } from './register/user-reg/user-reg.component';
+import { HotelOwnerRegComponent } from './register/hotelOwner-reg/hotelOwner-reg.component';
+
 // import {RegisterRoutingModule} from './register/register-routing.module';
 
 
@@ -27,7 +29,7 @@ const routes: Routes = [
   { path: 'Vehcile', loadChildren: () => import('./vehcile/vehcile.module').then(m => m.VehcileModule) },
   { path: 'Tourguide', loadChildren: () => import('./tourguide/tourguide.module').then(m => m.TourguideModule) },
 
-// customize_trip
+  // customize_trip
   { path: 'customize/hotel', component: HotelComponent },
   { path: 'customize/place', component: PlaceComponent },
   { path: 'customize/tourgide', component: CustomTourgideComponent },
@@ -49,12 +51,13 @@ const routes: Routes = [
   { path: 'about', component: AboutusComponent },
   { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
 
-// register
+  // register
   { path: 'user-reg', component: UserRegComponent },
+  { path: 'hotelOwner-reg', component: HotelOwnerRegComponent },
   // {path: 'register',
   // loadChildren: () => import('./register/register-routing.module').then(m => m.RegisterRoutingModule)
   // },
-  
+
   { path: 'payment', loadChildren: () => import('./payment/payment.module').then(m => m.PaymentModule) },
   { path: "**", component: FooterComponent },//can make a notfound component!
 ];

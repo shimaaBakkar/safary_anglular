@@ -57,6 +57,7 @@ export class UserRegComponent implements OnInit {
   this.UserRegForm.setValue(
     {
       userName: '',
+      gender: '',
       email: '' ,
       password: '',
     }

@@ -1,0 +1,201 @@
+<section class="m-5">
+    <div class="container">
+        <!-- Sign Up -->
+        <div class="container container__form ">
+            <!-- method="post" enctype="multipart/form-data" -->
+            <form [formGroup]="TourgideRegForm" class="form" id="form1">
+                <!-- (ngSubmit)="userSubmit()" -->
+                <!-- <div class="container"> -->
+                <h2 class="form__title">Sign Up</h2>
+                <!-- <div class="profImg">
+                    <label for="files">
+                        <img src="./assets/imgs/profImg.png" alt="">
+                        <input type="file" id="files" style="visibility:hidden;"
+                            accept="image/png, image/gif, image/jpeg" />
+                    </label>
+                </div> -->
+
+                <!-- TourgideName -->
+                <div>
+                    <input type="text" formControlName="TourgideName" placeholder="Your Name" name="TourgideName"
+                        class="input" [class.is-invalid]="TourgideName?.invalid"
+                        [class.is-valid]="TourgideName?.valid" />
+                    <!-- validation -->
+                    <div class="alert alert-danger" [hidden]="TourgideName?.valid || TourgideName?.untouched">
+                        <small *ngIf="TourgideName?.errors?.['required']">
+                            TourgideName is required!
+                        </small>
+                        <small *ngIf="TourgideName?.errors?.['pattern']">
+                            TourgideName must be 3 letters at least! ,
+                            <b> {{TourgideName?.errors?.['pattern'].actualValue}} </b> user Name dosn't match!
+                        </small>TourgideName
+                    </div>
+                </div>
+                <!-- gender -->
+                <div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <input required type="radio" name="gender" value="male" class="specifyColor"
+                                    UserRegForm="gender">
+                                <label class="form-check-label">male</label>
+                            </div>
+                            <div class="col-md-5">
+                                <input required type="radio" name="gender" value="female" class="specifyColor"
+                                    UserRegForm="gender">
+                                <label class="form-check-label">Female</label>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger" [hidden]="gender?.valid || gender?.untouched">
+                            <small *ngIf="gender?.errors?.['required']">
+                                gender is required!
+                            </small>
+                        </div>
+                        <!-- <small class="form-text text-danger"
+                            *ngIf="(gender.controls['gender'].errors?.required) && gender.controls['gender'].touched">Please
+                            choose a gender</small> -->
+                    </div>
+                    <br>
+                    <!-- <label>
+                        <input type="radio" class="specifyColor" id="male" value="Male"
+                         UserRegForm="gender">
+                          <span>male</span>
+                      </label>
+                      <br>
+                      <label>
+                        <input type="radio" class="specifyColor" id="female" value="Female"
+                          UserRegForm="gender">
+                          <span>female</span>
+                      </label>
+                      <br> -->
+                    <!-- <span>Male<input class="specifyColor" type="radio" name="gender" id="male" value="male"
+                            checked></span>
+                            <br>
+                    <span>Female<input class="specifyColor" type="radio" name="gender" id="female"
+                            value="female"></span> -->
+                </div>
+                <!-- email -->
+                <div>
+                    <input type="email" formControlName="Tourgideemail" placeholder="Email" name="Tourgideemail"
+                        class="input" required />
+                    <!-- validation -->
+                    <div class="alert alert-danger" [hidden]="Tourgideemail?.valid || Tourgideemail?.untouched">
+                        <small *ngIf="Tourgideemail?.errors?.['required']">
+                            email is required!
+                        </small>
+                        <small *ngIf="Tourgideemail?.errors?.['pattern']">
+                            email dosn't match!
+                            <!-- <b> {{email?.errors?.['pattern'].actualValue}} </b>email dosn't match! -->
+                        </small>
+                    </div>
+                </div>
+                <!-- password -->
+                <div>
+                    <input type="password" formControlName="Tourgidepassword" placeholder="Password"
+                        name="Tourgidepassword" class="input" required />
+                    <!-- validation -->
+                    <div class="alert alert-danger" [hidden]="Tourgidepassword?.valid || Tourgidepassword?.untouched">
+                        <small *ngIf="Tourgidepassword?.errors?.['required']">
+                            password is required!
+                        </small>
+                        <small *ngIf="Tourgidepassword?.errors?.['pattern']">
+                            password must be 8 character at least!
+                            <br>
+                            Password should include alphanumeric and special character!
+                        </small>
+                    </div>
+                </div>
+                <!-- License -->
+                <div>
+                    <input type="text" formControlName="LicenseNumber" placeholder="License" name="LicenseNumber"
+                        class="input" required />
+                    <!-- validation -->
+                    <div class="alert alert-danger" [hidden]="LicenseNumber?.valid || LicenseNumber?.untouched">
+                        <small *ngIf="LicenseNumber?.errors?.['required']">
+                            License Number is required!
+                        </small>
+                        <small *ngIf="LicenseNumber?.errors?.['pattern']">
+                            License Number must be 6 character at least!
+                        </small>
+                    </div>
+                </div>
+                <!-- lang -->
+                <div class="lang">
+                    Languages :
+                    <span>
+                        Arabic
+                        <input class="specifyColor" type="checkbox" name="arabic" id="arabic" value="arabic">
+                    </span>
+                    <span>
+                        English
+                        <input class="specifyColor" type="checkbox" name="eng" id="eng" value="eng">
+                    </span>
+                    <span>
+                        Spanish
+                        <input class="specifyColor" type="checkbox" name="spanish" id="spanish" value="spanish">
+                    </span>
+                    <span>
+                        Italian
+                        <input class="specifyColor" type="checkbox" name="italien" id="italien" value="italien">
+                    </span>
+                </div>
+                <!-- submit -->
+                <div>
+                    <button [disabled]="TourgideRegForm.invalid" type="submit" (click)="fillTourgideRegForm"
+                        class="btn">Sign Up</button>
+                </div>
+                <a href="#" class="link" id="signIn">Already a user </a>
+
+                <!-- <div>
+                    {{UserRegForm.get('userName')?.errors | json}}
+                </div> -->
+                <!-- </div> -->
+            </form>
+        </div>
+
+        <!-- test -->
+        <!-- <div>
+            <h3>to be removed "for test registeration" </h3>
+            <div>
+                {{TourgideRegComponent.value | json}}
+                <br>
+                {{TourgideName?.errors | json}}
+            </div>
+        </div> -->
+
+        <!-- Sign In -->
+        <!-- <div class="container__form container--signin">
+            <form action="#" class="form" id="form2">
+                <h2 class="form__title">Sign In</h2>
+                <input type="email" placeholder="Email" name="email" class="input" required />
+                <input type="password" placeholder="Password" name="pass" class="input" required />
+                <a href="#" class="link">Forgot your password?</a>
+                <button class="btn" (click)="filluserForm">Sign In</button>
+                <a href="#" class="link" id="signUp">Don't have an account Yet?</a>
+            </form>
+        </div> -->
+
+        <!-- Overlay -->
+        <!-- <div class="container__overlay"> -->
+
+        <!-- <div class="overlay">
+                <div class="overlay__panel overlay--left">
+                    <img src="./assets/imgs/sign-up-page-1886582-1598253.png" alt="">
+                </div>
+    
+                <div class="overlay__panel overlay--right">
+                    <img src="./assets/imgs/6a7458116bc7b6b81a23a258b7488246.jpg" alt="">
+                </div>
+            </div> -->
+        <!-- </div> -->
+
+        <!-- <div>
+            <h3>to be removed "for test login" </h3>
+            <div>
+                {{UserRegForm.value | json}}
+                <br>
+                {{userName?.errors | json}}
+            </div>
+        </div> -->
+    </div>
+</section>
