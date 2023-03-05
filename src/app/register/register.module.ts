@@ -5,6 +5,7 @@ import { Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HotelOwnerRegComponent } from './hotelOwner-reg/hotelOwner-reg.component';
 import { TourgideRegComponent } from './tourgide-reg/tourgide-reg.component';
+import { DriverComponent } from './driver/driver.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   declarations: [
     UserRegComponent,
     HotelOwnerRegComponent,
-    TourgideRegComponent
+    TourgideRegComponent,
+    DriverComponent
   ],
   imports: [
     CommonModule,
