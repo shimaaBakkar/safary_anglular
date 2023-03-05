@@ -107,7 +107,7 @@
             <div>
                 <button [disabled]="UserRegForm.invalid" type="submit" (click)="filluserForm" class="btn">Sign Up</button>
             </div>
-            <a href="#" class="link" id="signIn">Already a user </a>
+            <a routerLink="" routerLinkActive="router-link-active"  class="link" id="signIn">Already a user </a>
 
             <!-- <div>
                 {{UserRegForm.get('userName')?.errors | json}}
