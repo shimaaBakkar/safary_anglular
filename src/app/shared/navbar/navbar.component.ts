@@ -7,7 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  constructor(private router : Router){}
+buy(arg0: any) {
+throw new Error('Method not implemented.');
+}
+hotel: any;
 
 
   openplace(){

@@ -16,14 +16,6 @@ import { VehcileModule } from './vehcile/vehcile.module';
 // import { RegisterModule } from './register/register.module';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { Router } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { DashboardModule } from './dashboard/dashboard.module';
-import { ReactiveFormsModule } from '@angular/forms';
-import { ToastrModule } from 'ngx-toastr';
-import { NgxSpinnerModule } from "ngx-spinner";
-import { CoreModule } from './core/core.module';
-
 
 @NgModule({
   declarations: [
@@ -47,16 +39,18 @@ import { CoreModule } from './core/core.module';
     HotelsModule,
     PlacesModule,
     VehcileModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    ToastrModule.forRoot(),
-    DashboardModule,
-    CoreModule
+  
+
   ],
 
 
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  // exports: [
+  //   CommonModule,
+  //   FormsModule,
+  //   ReactiveFormsModule
+  // ]
 })
 export class AppModule {
 
