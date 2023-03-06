@@ -1,4 +1,4 @@
-<!-- <div class="container">
+<div class="container">
     <div class="row">
         <div class="col-md-offset-1 col-md-10">
             <div class="panel">
@@ -26,21 +26,21 @@
                             <tr>
                                 <td colspan="5"><input type="text" class="form-control" placeholder="Search Users"></td>
                             </tr>
-                            <tr   *ngFor="let Vehcile of VehcileList ;">
+                            <tr   *ngFor="let tourguide of AllDashbourdTourguide ;">
                                 <td>
                                     <div class="user_icon">
-                                        <img [src]=" 'http://localhost:8000/' + Vehcile.image " style="width: 70px;height: 70px; border-radius: 10px;" >
+                                        <!-- <img [src]=" 'http://localhost:8000/' + Vehcile.image " style="width: 70px;height: 70px; border-radius: 10px;" > -->
                                     </div>
                                 </td>
-                                <td>{{Vehcile?.id}}</td>
-                                <td>{{Vehcile?.id}}</td>
+                                <!-- <td>{{tourguide?.id}}</td> -->
+                                <!-- <td>{{Vehcile?.id}}</td>
                                 <td>{{Vehcile?.type}}</td>
-                                <td>{{Vehcile?.license}}</td>
+                                <td>{{Vehcile?.license}}</td> -->
                                     <td>
                                     <ul class="action-list">
                                         <li><a href="#" class="btn btn-success"><i class="fa fa-search"></i></a></li>
                                         <li><a href="#" class="btn btn-primary"><i class="fa fa-pencil-alt"></i></a></li>
-                                        <li><a href="#" class="btn btn-danger"><i class="fa fa-trash" (click)="deleteVehicle(Vehcile.id)"></i></a></li>
+                                        <!-- <li><a href="#" class="btn btn-danger"><i class="fa fa-trash" (click)="deleteVehicle(Vehcile.id)"></i></a></li> -->
                                     </ul>
                                 </td>
                             </tr>
@@ -72,4 +72,4 @@
         </div>
     </div>
 </div>
- -->
+
