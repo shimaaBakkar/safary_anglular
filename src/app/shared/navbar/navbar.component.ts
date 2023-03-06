@@ -14,6 +14,6 @@ hotel: any;
 
 
   openplace(){
-this.router.navigate(['Allplaces'])
+// this.router.navigate(['Allplaces'])
   }
 }

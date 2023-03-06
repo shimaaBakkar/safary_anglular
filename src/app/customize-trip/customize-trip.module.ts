@@ -8,7 +8,7 @@ import { CustomTripDetailsComponent } from './custom-trip-details/custom-trip-de
 import { RouterModule, Routes } from '@angular/router';
 import { CustomLayoutComponent } from './custom-layout/custom-layout.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { ReactiveFormsModule } from '@angular/forms';
 const routes: Routes = [
   { path: "", redirectTo: "customize", pathMatch: "full" },
   {
@@ -17,10 +17,11 @@ const routes: Routes = [
       { path: 'trip', component: CustomTripDetailsComponent },
       { path: 'hotel', component: HotelComponent },
       { path: 'place', component: PlaceComponent },
+   
       { path: 'tourgide', component: CustomTourgideComponent },
     ]
   },
-  { path: 'custom-trip-details', component: CustomTripDetailsComponent },
+  // { path: 'trip', component: CustomTripDetailsComponent },
 ];
 
 @NgModule({
@@ -38,6 +39,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     NgxPaginationModule,
+    ReactiveFormsModule
   ]
 })
  export class CustomizeTripModule { }

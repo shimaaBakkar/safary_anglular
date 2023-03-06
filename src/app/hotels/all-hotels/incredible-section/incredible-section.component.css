@@ -23,19 +23,19 @@
   }
   
   .timer.wrapper {
-    background-image: url("E:\Angular\safary_anglular\src\assets\img\w2.jpg");
+    /* background-image: url("E:\Angular\safary_anglular\src\assets\img\w2.jpg"); */
   }
   
   .timer.about::after {
     z-index: 1;
     top: 0%;
-    background-image: url("E:\Angular\safary_anglular\src\assets\img\line2.png");
+    /* background-image: url("E:\Angular\safary_anglular\src\assets\img\line2.png"); */
   }
   
   .timer.about::before {
     z-index: 1;
     bottom: 0%;
-    background-image: url("E:\Angular\safary_anglular\src\assets\img\line1.png");
+    /* background-image: url("E:\Angular\safary_anglular\src\assets\img\line1.png"); */
   }
   
   .timer h2,

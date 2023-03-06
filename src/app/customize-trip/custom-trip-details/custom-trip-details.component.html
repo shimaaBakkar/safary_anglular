@@ -2,7 +2,7 @@
     <div class="comtainer m-5">
 
       <div class="booking-form">
-        <form action="" (ngSubmit)="submitForm()" [formGroup]="newForm">
+        <form action="" (ngSubmit)="submitForm()"  [formGroup]="newForm">
 
 
 <!-- valid -->
@@ -13,27 +13,21 @@ newForm.dirty  && newForm.invalid ">
   This field is required
 </div>
 </div>
-<!--      -->
-<!-- 
-{
-  "order info": {
-      "user_id": "1",
-      "budget": "10000",
-      "check_in": "2023-10-03",
-      "check_out": "2023-10-10",
-      "n_of_adults": "3",
-      "n_of_childeren": "5",
-      "n_of_days": 7,
-      "updated_at": "2023-03-06T11:13:25.000000Z",
-      "created_at": "2023-03-06T11:13:25.000000Z",
-      "id": 3
-  },
-  "message": "the order is saved"
-} -->
+
 
           <div class="form-group">
             <span class="form-label">Your Budget</span>
             <input class="form-control" formControlName="budget" type="text" placeholder="Enter Your Budget">
+        
+            <div *ngIf="
+            (  newForm.controls['name'].touched || newForm.controls['name'].dirty ) &&
+            newForm.controls['name'].invalid
+            ">
+            <div class="form-text text-danger" *ngIf="newForm.controls['name'].errors?.['required']">
+              This field is required
+            </div>
+          </div>
+
           </div>
           <!-- Check In/Out  -->
           <div class="row">
@@ -41,12 +35,31 @@ newForm.dirty  && newForm.invalid ">
               <div class="form-group">
                 <span class="form-label">Check In</span>
                 <input class="form-control"formControlName="check_in" type="date" required>
+             
+                <div *ngIf="
+                (  newForm.controls['name'].touched || newForm.controls['name'].dirty ) &&
+                newForm.controls['name'].invalid
+                ">
+                <div class="form-text text-danger" *ngIf="newForm.controls['name'].errors?.['required']">
+                  This field is required
+                </div>
+              </div>
+
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
                 <span class="form-label">Check out</span>
-                <input class="form-control" type="date" required>
+                <input class="form-control" formControlName="check_out" type="date" required>
+             
+                <div *ngIf="
+                (  newForm.controls['name'].touched || newForm.controls['name'].dirty ) &&
+                newForm.controls['name'].invalid
+                ">
+                <div class="form-text text-danger" *ngIf="newForm.controls['name'].errors?.['required']">
+                  This field is required
+                </div>
+              </div>
               </div>
             </div>
           </div>
@@ -55,45 +68,72 @@ newForm.dirty  && newForm.invalid ">
             <div class="col-sm-4">
               <div class="form-group">
                 <span class="form-label">Rooms</span>
-                <input class="form-control" type="number" required>
+                <input class="form-control" formControlName="n_of_room
+                " type="number" required>
 
-                <select class="form-control">
+
+                <div *ngIf="
+                (  newForm.controls['name'].touched || newForm.controls['name'].dirty ) &&
+                newForm.controls['name'].invalid
+                ">
+                <div class="form-text text-danger" *ngIf="newForm.controls['name'].errors?.['required']">
+                  This field is required
+                </div>
+              </div>
+
+
+                <select class="form-control" formControlName="room_type">
                   <span class="form-label">Rooms</span>
                   <option value="single">single</option>
                   <option value="double">Double</option>
                   <option value="Triple">Triple</option>
-                
-
                 </select>
+
+
+                <div *ngIf="
+                (  newForm.controls['name'].touched || newForm.controls['name'].dirty ) &&
+                newForm.controls['name'].invalid
+                ">
+                <div class="form-text text-danger" *ngIf="newForm.controls['name'].errors?.['required']">
+                  This field is required
+                </div>
+              </div>
+
                 <!-- <span class="select-arrow"></span> -->
               </div>
             </div>
             <div class="col-sm-4">
               <div class="form-group">
                 <span class="form-label">Adults</span>
-                <input class="form-control" type="number" required>
-                <!-- <select class="form-control">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select> -->
-                <!-- <span class="select-arrow"></span> -->
+                <input class="form-control" type="number" required formControlName="n_of_adults">
+             
+                <div *ngIf="
+                (  newForm.controls['name'].touched || newForm.controls['name'].dirty ) &&
+                newForm.controls['name'].invalid
+                ">
+                <div class="form-text text-danger" *ngIf="newForm.controls['name'].errors?.['required']">
+                  This field is required
+                </div>
+              </div>
+
               </div>
             </div>
             <div class="col-sm-4">
               <div class="form-group">
                 <span class="form-label">Children</span>
-                <input class="form-control" type="number" required>
-                <!-- <select class="form-control">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select> -->
-                <!-- <span class="select-arrow"></span> -->
+                <input class="form-control" type="number" required formControlName="n_of_childeren">
+            
+
+                <div *ngIf="
+                (  newForm.controls['name'].touched || newForm.controls['name'].dirty ) &&
+                newForm.controls['name'].invalid
+                ">
+                <div class="form-text text-danger" *ngIf="newForm.controls['name'].errors?.['required']">
+                  This field is required
+                </div>
+              </div>
+
+
               </div>
             </div>
           </div>
@@ -101,12 +141,12 @@ newForm.dirty  && newForm.invalid ">
           <!-- <div class="form-btn d-grid gap-2 d-md-flex justify-content-md-end">
             <button type="submit" class="submit-btn m-3" routerLink="/custo_hotel">Confirm</button>
           </div> -->
-          
+          <button class="btn submit-btn m-3" [routerLink]="['/customize/hotel']"   class="btn" [disabled]="newForm.invalid">Confirm</button>
+
         </form>
 
         <div class=" d-grid gap-2 d-md-flex justify-content-md-end">
           <!-- <button class=" m-3" routerLink="/custo_hotel">Confirm</button> -->
-          <button class="btn submit-btn m-3" [routerLink]="['/customize/hotel']">Confirm</button>
           
         </div>
         <!-- <div class="form-btn d-grid gap-2 d-md-flex justify-content-md-end">

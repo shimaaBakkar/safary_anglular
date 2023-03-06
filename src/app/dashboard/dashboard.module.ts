@@ -71,6 +71,7 @@ import { DriverDashTableComponent } from './DashboardDriver/Table/driver-dash-ta
         HttpClientModule,
         CommonModule,
         DashboardRoutingModule,
+        RouterModule
   
      
     ]
