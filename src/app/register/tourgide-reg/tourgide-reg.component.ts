@@ -10,9 +10,9 @@ export class TourgideRegComponent implements OnInit{
   // TourgideRegForm;
   TourgideRegForm!: FormGroup;
 
-  language = ['Arabic','English','Spanish','Italian'];
+  // language = ['Arabic','English','Spanish','Italian'];
 
-  testForm: FormGroup<{ language: FormControl<string | null>; }> | undefined ;
+  // testForm: FormGroup<{ language: FormControl<string | null>; }> ;
   // TourgideRegForm!: FormGroup;
   form: FormGroup<{ gender: FormControl<string | null>; }>; 
   fb: any;
@@ -25,9 +25,9 @@ export class TourgideRegComponent implements OnInit{
       }),
       Tourgideemail: new FormControl('', [Validators.required, Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$/)]),
       Tourgidepassword: new FormControl('', [Validators.required, Validators.pattern(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}/)]),
-      language: this.testForm = this.fb.group({
-        language: this.fb.array([])
-      })
+      // language: this.testForm = this.fb.group({
+      //   language: this.fb.array([])
+      // })
       // language: this.form = fb.group({
       //   language: ['', Validators.required]
       // }),
@@ -50,13 +50,36 @@ export class TourgideRegComponent implements OnInit{
     return this.TourgideRegForm.get('Tourgidepassword');
   }
 
+  get language() {
+    return this.TourgideRegForm.get('language');
+  }
+
   // get language() {
   //   return this.TourgideRegForm.get('language') as FormArray;
   // }
 
-  // addLanguage(){
-  //   this.language.controls.push(new FormControl(''));
+  // addLanguage(event: any){
+  //   let langArr = this.testForm.get('language') as unknown as FormArray;
+    
+  //   if(event.target.checked){
+  //     langArr.push(new FormControl(event.target.value))
+  //   }
+  //   else {
+  //     let i=0;
+  //     langArr.controls.forEach(
+  //       (lang:any)=>{
+  //         if(lang.value == event.value){
+  //           langArr.removeAt(i);
+  //           return;
+  //         }
+  //         i++
+  //       }
+  //     )
+  //   }
+  //   console.log(event.target.checked)
+  //   // this.language.controls.push(new FormControl(''));
   // }
+
   ngOnInit(): void {
   }
 
