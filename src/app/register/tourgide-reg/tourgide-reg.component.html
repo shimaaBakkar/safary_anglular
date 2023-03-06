@@ -83,44 +83,40 @@
                     </div>
                 </div>
                 <!-- lang -->
-                <div>
+                <!-- <div>
                     Languages :
                     <br>
                     <ng-container class="lang" *ngFor="let lang of language">
                             <label for="{{lang}}">
-                                <input class="specifyColor" type="checkbox" value={{lang}}>
+                                <input class="specifyColor" type="checkbox" value={{lang}} (change)="addLanguage($event)">
                                 {{lang}}
                             </label>
                             <br>
                     </ng-container>
-                </div>
-                  <!-- old one -->
-                <div>
-
-
-                    <!-- <div class="lang">
-                        Languages :
-                        <span>
-                            Arabic
-                            <input class="specifyColor" type="checkbox" name="arabic" id="arabic" value="Arabic"
-                             TourgideRegForm="language">
-                        </span>
-                        <span>
-                            English
-                            <input class="specifyColor" type="checkbox" name="eng" id="eng" value="English"
-                                TourgideRegForm="language">
-                        </span>
-                        <span>
-                            Spanish
-                            <input class="specifyColor" type="checkbox" name="spanish" id="spanish" value="spanish"
-                                TourgideRegForm="language">
-                        </span>
-                        <span>
-                            Italian
-                            <input class="specifyColor" type="checkbox" name="italien" id="italien" value="Italian"
-                                TourgideRegForm="language">
-                        </span>
-                    </div> -->
+                </div> -->
+                <!-- old one -->
+                <div class="lang">
+                    Languages :
+                    <span>
+                        Arabic
+                        <input class="specifyColor" type="checkbox" name="arabic" id="arabic" value="Arabic"
+                            TourgideRegForm="language">
+                    </span>
+                    <span>
+                        English
+                        <input class="specifyColor" type="checkbox" name="eng" id="eng" value="English"
+                            TourgideRegForm="language">
+                    </span>
+                    <span>
+                        Spanish
+                        <input class="specifyColor" type="checkbox" name="spanish" id="spanish" value="spanish"
+                            TourgideRegForm="language">
+                    </span>
+                    <span>
+                        Italian
+                        <input class="specifyColor" type="checkbox" name="italien" id="italien" value="Italian"
+                            TourgideRegForm="language">
+                    </span>
                 </div>
                 <!-- submit -->
                 <div>
@@ -145,6 +141,7 @@
                 <br>
                 {{Tourgidepassword?.errors | json}}
                 <br>
+                <!-- {{testForm.get('lang')?.value}} -->
                 <!-- {{language?.errors | json}} -->
             </div>
         </div>
