@@ -1,0 +1,89 @@
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> 
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-sm-5 col-xs-12">
+                            <h4 class="title">Data <span>List</span></h4>
+                        </div>
+                        <div class="col-sm-7 col-xs-12 text-right">
+                            <div class="btn_group">
+                                <span class="label label-danger">Filter:</span>
+                                <button type="button" class="btn btn-warning" title="Blocked"><i class="fa fa-ban"></i></button> 
+                                <button type="button" class="btn btn-success" title="Active"><i class="fa fa-check-square"></i></button>
+                            </div>
+                            <!-- <a  class="btn add-new"><i class="fa fa-plus-circle"></i>
+                                Add New
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>Photo</th>
+                                <th>title</th>
+                                <th>price</th>
+                                <th>description</th>
+     
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr   *ngFor="let Hotel of hotelList ;">
+
+                                <td>{{Hotel?.id}}</td>
+                                <td>
+                                    <div class="user_icon">
+                                            <img [src]=" 'http://localhost:8000/' + Hotel.image " style="width: 70px;height: 70px; border-radius: 10px;" >
+                                    </div>  
+                                </td>
+                                <td>{{Hotel?.title}}</td>
+                                <td>{{Hotel?.price}}</td>
+                                <td>{{Hotel?.category}}</td>
+                                <td>{{Hotel?.description}}</td>
+   
+                                <td><span class="status">Active</span></td>
+                                <td>iOS Developer</td>
+                                <td>
+                                    <ul class="action-list">
+                                        <!-- <li><button type="button" class="btn btn-warning"><i class="fa fa-ban"></i></button></li>-->
+                                        <!-- <li><button href="#" class="btn btn-primary"><i class="fa fa-pencil-alt" (click)="updateHotel()" ></i></button></li>  -->
+                                        <li><button  class="btn btn-danger"><i class="fa fa-trash" (click)="deleteHotel(Hotel.id)"></i></button></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                       
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <!-- <div class="col col-sm-6 col-xs-8">Showing <b>5</b> out of <b>25</b> entries</div> -->
+                        <div class="col-sm-12">
+                            <ul class="pagination hidden-xs">
+                                <li><a href="#">Prev</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">Next</a></li>
+                            </ul>
+                            <ul class="pagination visible-xs">
+                                <li><a href="#"><</a></li>
+                                <li><a href="#">></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

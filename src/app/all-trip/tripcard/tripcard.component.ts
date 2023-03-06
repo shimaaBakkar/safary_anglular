@@ -7,11 +7,12 @@ import { Component, Input } from '@angular/core';
 })
 export class TripcardComponent {
   @Input() Trip={
-    id: '',
-    title: '',
-    price: '',
-    category: '',
-    description: '',
-    image: '',
+    Trip_id:'',
+    description:'',
+    price:'',
+    cover_img:'',
+    n_of_people: 0 ,
+    n_of_places:0,
+    num_of_days:0 
   }
 }

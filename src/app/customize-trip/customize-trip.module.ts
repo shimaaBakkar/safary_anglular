@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {  NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HotelComponent } from './custo_hotel/hotel.component';
 import { PaginationComponent } from './pagination/pagination.component';
@@ -31,12 +31,15 @@ const routes: Routes = [
     CustomTourgideComponent,
     CustomTripDetailsComponent,
     CustomLayoutComponent,
+
+
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     NgxPaginationModule,
-
   ]
 })
-export class CustomizeTripModule { }
+ export class CustomizeTripModule { }
+
+

@@ -1,0 +1,359 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css "/>
+
+
+<link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
+
+<nav  class="primary-navigation">
+  <ul>
+  
+    <li  style="background-color: rgb(196, 228, 255);padding: 1rem; ;"><a  href="#">Add User &dtrif;</a>
+      <ul class="dropdown">
+        <li>  <a class="dropdown-item" (click)="addAdmin()"> 😎Admin</a></li>
+        <li>   <a class="dropdown-item"  (click)="addDriver()">🚐User AS Driver</a></li>
+        <li>   <a class="dropdown-item"  (click)="addTourguide()">💁‍♂️User AS Tourguide</a></li>
+        <li>  <a class="dropdown-item" (click)="addHotelOwner()">💖User AS HotelOwner</a></li>
+      </ul>
+      </li>
+    </ul>
+</nav>
+
+<!-- ===========================================User=============================================== -->
+<div class="container" style="margin-top: 3rem ;">
+
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col col-sm-3 col-xs-12">
+                            <h4 class="title">Data <span>List</span></h4>
+                        </div>
+                        <div class="col-sm-9 col-xs-12 text-right">
+                            <div class="btn_group">
+                                <input type="text" class="form-control" placeholder="Search">
+                                <button class="btn btn-default" title="Reload" (click)="GetAllUsers()" ><i class="fa fa-sync-alt"></i></button>
+                                <button class="btn btn-default" title="Pdf"><i class="fa fa-file-pdf"></i></button>
+                                <button class="btn btn-default" title="Excel"><i class="fas fa-file-excel"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body table-responsive">
+                    <table class="table" >
+                        <thead>
+                            <tr>
+                                <th>image</th>
+                                <th>ID</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Gender</th>
+                                <th>TYPE</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+  
+                            <tr   *ngFor="let User of AllUsersList ;">
+
+                                <td>
+                                    <img [src]=" 'http://localhost:8000/' + User.image " style="width: 70px;height: 70px; border-radius: 10px;" >
+                                </td>
+                                   
+                                <td>{{User?.id}}</td>
+                                <td>{{User?.name}}</td>
+                                <td>{{User?.email}}</td>
+                                <td>{{User?.gender}}</td>
+                                <td >
+                                    <span *ngIf="User.user_type ==  '0'  " > 💖User </span>
+                                    <span *ngIf="User.user_type ==  '1'  " > 😎Admin</span>
+                                </td>
+                             
+                                <td>
+                                    <ul class="action-list">
+                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="#" data-tip="delete" (click)="deleteUser(User.id)"><i class="fa fa-trash"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                          
+                        </tbody>
+                    </table>
+                </div>
+                <!-- <div class="panel-footer">
+                    <div class="row">
+                        <div class="col col-sm-6 col-xs-6">showing <b>5</b> out of <b>25</b> entries</div>
+                        <div class="col-sm-6 col-xs-6">
+                            <ul class="pagination hidden-xs pull-right">
+                                <li><a href="#"><</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">></a></li>
+                            </ul>
+                            <ul class="pagination visible-xs pull-right">
+                                <li><a href="#"> - </a></li>
+                                <li><a href="#"> + </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+
+         
+        </div>
+        </div>
+
+
+
+
+
+   
+</div>
+
+<!-- ============================================Tourguide============================================= -->
+
+<div class="container" style="margin-top: 3rem ;">
+
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col col-sm-3 col-xs-12">
+                            <h4 class="title">Data <span>Tourguide</span></h4>
+                        </div>
+                        <div class="col-sm-9 col-xs-12 text-right">
+                            <div class="btn_group">
+                                <input type="text" class="form-control" placeholder="Search">
+                                <button class="btn btn-default" title="Reload" (click)="GetAllTourguide()" ><i class="fa fa-sync-alt"></i></button>
+                                <button class="btn btn-default" title="Pdf"><i class="fa fa-file-pdf"></i></button>
+                                <button class="btn btn-default" title="Excel"><i class="fas fa-file-excel"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body table-responsive">
+                    <table class="table" >
+                        <thead>
+                            <tr>
+                                <th>image</th>
+                                <th>ID</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Gender</th>
+                                <th>TYPE</th>
+                                <th>price_per_day</th>
+                                <th>syndicate_No</th>
+                                <th>user_type</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                         
+  
+                            <tr   *ngFor="let Tourguide of AllTourguide ;">
+
+                                <td>
+                                    <img [src]=" 'http://localhost:8000/' + Tourguide.image " style="width: 70px;height: 70px; border-radius: 10px;" >
+                                </td>
+                                   
+                                <td>{{Tourguide?.id}}</td>
+                                <td>{{Tourguide?.name}}</td>
+                                <td>{{Tourguide?.email}}</td>
+                                <td>{{Tourguide?.gender}}</td>
+                                <td >
+                                    Tourguide
+                                </td>
+                                <td>  {{Tourguide?.price_per_day}}  </td>
+                                <td>  {{Tourguide?.syndicate_No}}  </td>
+                                <td>  {{Tourguide?.user_type}}  </td>
+                                <td>
+                                    <ul class="action-list">
+                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="#" data-tip="delete" (click)="deleteUser(Tourguide.id)"><i class="fa fa-trash"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                          
+                        </tbody>
+                    </table>
+                </div>
+             
+
+            </div>
+
+         
+        </div>
+        </div>
+
+
+
+
+
+   
+</div>
+
+
+<!-- ============================================Driver============================================= -->
+
+<div class="container" style="margin-top: 3rem ;">
+
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col col-sm-3 col-xs-12">
+                            <h4 class="title">Data <span>Driver</span></h4>
+                        </div>
+                        <div class="col-sm-9 col-xs-12 text-right">
+                            <div class="btn_group">
+                                <input type="text" class="form-control" placeholder="Search">
+                                <button class="btn btn-default" title="Reload" (click)="GetAllDriver()" ><i class="fa fa-sync-alt"></i></button>
+                                <button class="btn btn-default" title="Pdf"><i class="fa fa-file-pdf"></i></button>
+                                <button class="btn btn-default" title="Excel"><i class="fas fa-file-excel"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body table-responsive">
+                    <table class="table" >
+                        <thead>
+                            <tr>
+                                <th>image</th>
+                                <th>ID</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Gender</th>
+                                <th>TYPE</th>
+                                <th>license</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        
+                    
+  
+                            <tr   *ngFor="let Driver of AllDriver ;">
+
+                                <td>
+                                    <img [src]=" 'http://localhost:8000/' + Driver.image " style="width: 70px;height: 70px; border-radius: 10px;" >
+                                </td>
+                                   
+                                <td>{{Driver?.id}}</td>
+                                <td>{{Driver?.name}}</td>
+                                <td>{{Driver?.email}}</td>
+                                <td>{{Driver?.gender}}</td>
+                                <td >
+                                    Driver
+                                </td>
+                                <td>  {{Driver?.license}}  </td>
+                          
+                                <td>
+                                    <ul class="action-list">
+                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="#" data-tip="delete" (click)="deleteUser(Driver.id)"><i class="fa fa-trash"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                          
+                        </tbody>
+                    </table>
+                </div>
+       
+            </div>
+
+         
+        </div>
+        </div>
+
+
+
+
+
+   
+</div>
+
+
+<!-- ============================================HotelOwner============================================= -->
+<div class="container" style="margin-top: 3rem ;">
+
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col col-sm-3 col-xs-12">
+                            <h4 class="title">Data <span>HotelOwner</span></h4>
+                        </div>
+                        <div class="col-sm-9 col-xs-12 text-right">
+                            <div class="btn_group">
+                                <input type="text" class="form-control" placeholder="Search">
+                                <button class="btn btn-default" title="Reload" (click)="GetHotelOwner()" ><i class="fa fa-sync-alt"></i></button>
+                                <button class="btn btn-default" title="Pdf"><i class="fa fa-file-pdf"></i></button>
+                                <button class="btn btn-default" title="Excel"><i class="fas fa-file-excel"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body table-responsive">
+                    <table class="table" >
+                        <thead>
+                            <tr>
+                                <th>image</th>
+                                <th>ID</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Gender</th>
+                                <th>TYPE</th>
+                                <th>commercial_reg_No</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        
+                    
+  
+                            <tr   *ngFor="let HotelOwner of AllHotelOwner ;">
+
+                                <td>
+                                    <img [src]=" 'http://localhost:8000/' + HotelOwner.image " style="width: 70px;height: 70px; border-radius: 10px;" >
+                                </td>
+                                   
+                                <td>{{HotelOwner?.id}}</td>
+                                <td>{{HotelOwner?.name}}</td>
+                                <td>{{HotelOwner?.email}}</td>
+                                <td>{{HotelOwner?.gender}}</td>
+                                <td >
+                                    HotelOwner
+                                </td>
+                                <td>{{HotelOwner?.commercial_reg_No}}  </td>
+                          
+                                <td>
+                                    <ul class="action-list">
+                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="#" data-tip="delete" (click)="deleteUser(HotelOwner.id)"><i class="fa fa-trash"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                          
+                        </tbody>
+                    </table>
+                </div>
+       
+            </div>
+
+         
+        </div>
+        </div>
+
+
+
+
+
+   
+</div>

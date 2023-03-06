@@ -78,12 +78,8 @@
 
     <div class="container">
         <div class="row g-5" style="margin-top: 1rem;" >
-
-          <h1>{{placesList|json}}</h1>
-          <div class="col-lg-3  col-sm-6 col-12 rounded"  *ngFor="let places of placesList ;" >
-         
+          <div class="col-lg-3  col-sm-6 col-12 rounded"  *ngFor="let places of placesList ;" >  
                   <app-allplacescard [places]="places"></app-allplacescard>
-
         </div>
     
         </div>

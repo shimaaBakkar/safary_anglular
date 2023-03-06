@@ -19,5 +19,17 @@ export class HotelService {
       return this.http.get(`https://fakestoreapi.com/products/${id}` )
     }
 
+
+
+
+    CreateHotels(model: any){
+      return this.http.post("http://localhost:8000/api/userRegistrations",model);
+      
+    }
+  
+    deleteHotels(id : any ){
+      return this.http.delete(`http://localhost:8000/api/userRegistrations/${id}`);
+      
+    }
    }
 

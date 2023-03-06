@@ -8,7 +8,7 @@ import { LandingpageModule } from './landingpage/landingpage.module';
 import { PlacesModule } from './places/places.module';
 import { AllTripModule } from './all-trip/all-trip.module';
 import { CustomizeTripModule } from './customize-trip/customize-trip.module';
-import { DashboardModule } from './dashboard/dashboard.module';
+
 import { HotelsModule } from './hotels/hotels.module';
 
 import { TourguideModule } from './tourguide/tourguide.module';
@@ -18,10 +18,11 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { Router } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
-
-
-
+import { DashboardModule } from './dashboard/dashboard.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
@@ -30,24 +31,27 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AppComponent,
        NavbarComponent,
        FooterComponent,
+  
 
-    
+      
+  
+
   ],
   imports: [
+    NgxSpinnerModule.forRoot({ type: 'ball-atom' }),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     LandingpageModule,
     AllTripModule,
-    CustomizeTripModule,
-    DashboardModule,
     HotelsModule,
     PlacesModule,
-    // RegisterModule,
-    TourguideModule,
     VehcileModule,
-
-
+    HttpClientModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
+    DashboardModule,
+    CoreModule
   ],
 
 
@@ -57,3 +61,5 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 export class AppModule {
 
  }
+
+

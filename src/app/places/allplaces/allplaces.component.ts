@@ -14,12 +14,13 @@ placesList:Array <Places> =[];
 constructor(private placesListServices :PlacesService){};
 
 ngOnInit():void{
-  
+this.getplace();
+}
+
+getplace(){
   this.placesListServices.getplacestlist().subscribe(
     res => {this.placesList=res}
   )
 }
-
-
 }
 

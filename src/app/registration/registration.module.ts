@@ -3,22 +3,25 @@ import { CommonModule } from '@angular/common';
 
 import { RegistrationRoutingModule } from './registration-routing.module';
 import { RegistrationComponent } from './registration.component';
+import { UserComponent } from './user/user.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    RegistrationComponent
+    RegistrationComponent,
+    UserComponent,
+    
   ],
   imports: [
+    ReactiveFormsModule,
+    HttpClientModule,
     CommonModule,
-    RegistrationRoutingModule
+    RegistrationRoutingModule,
+ 
   ]
 })
 export class RegistrationModule {
 
-
-
-
-
-  
  }

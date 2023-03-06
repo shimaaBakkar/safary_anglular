@@ -7,12 +7,14 @@ import { Component, Input } from '@angular/core';
 })
 export class VehcilecardComponent {
   @Input()  Vehcile={
-    id: '',
-    title: '',
-    price: '',
-    category: '',
-    description: '',
-    image: '',
+ 
+    id:'',
+    type:'',
+    license : '',
+    image : '',
+    driver_id: ''
+   
+   
   }
 
 }

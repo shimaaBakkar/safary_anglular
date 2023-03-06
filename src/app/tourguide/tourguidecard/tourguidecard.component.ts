@@ -7,12 +7,13 @@ import { Component, Input } from '@angular/core';
 })
 export class TourguidecardComponent {
   @Input() Tourguide={
-    id: '',
-    title: '',
-    price: '',
-    category: '',
-    description: '',
-    image: '',
+    price_per_day: '',
+    syndicate_No: '',
+    desc: '',
+   user_id: ''
+  
   }
 
+
+  
 }

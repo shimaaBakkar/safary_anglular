@@ -1,0 +1,149 @@
+
+<section class="h-100 h-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex  align-items-center h-100" style="margin-left: 9rem;">
+        <div class="col-lg-8 col-xl-6">
+          <div class="card rounded-3">
+            <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
+                class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+                alt="Sample photo"> -->
+            <div class="card-body p-5 p-md-5">
+  
+              <form action="" (ngSubmit)="submitForm()" [formGroup]="newForm">
+                <h2> ADD Driver </h2>
+  
+  
+                <div *ngIf="
+                  newForm.dirty  && newForm.invalid ">
+                  <div class="form-text text-danger" *ngIf="newForm.errors?.['required']">
+                    This field is required
+                  </div>
+                </div>
+  
+                <div class="profImg">
+                  <label for="files">
+                    <img src="../../../assets/img/1.png.jpg" alt="" style="height: 15rem;">
+  
+  
+                    <input type="file" id="files" style="visibility:hidden;" accept="image/png, image/gif, image/jpeg"  formControlName="image" (change)="selectImage($event)"/>
+                  </label>
+                  <span>{{fileName}}</span>
+                </div>
+  
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+                  <input class="input-field" type="text" placeholder="Username" formControlName="name">
+  
+                  <div *ngIf="
+                    (  newForm.controls['name'].touched || newForm.controls['name'].dirty ) &&
+                    newForm.controls['name'].invalid
+                    ">
+                    <div class="form-text text-danger" *ngIf="newForm.controls['name'].errors?.['required']">
+                      This field is required
+                    </div>
+                  </div>
+                  <div class="form-text text-danger" *ngIf="newForm.controls['name'].errors?.['minlength']">
+                    Minlength is 3 characters
+                  </div>
+                  <div class="form-text text-danger" *ngIf="newForm.controls['name'].errors?.['maxlength']">
+                    MaxLength is 15 characters
+                  </div>
+                </div>
+  
+                <div class="input-container">
+                  <i class="fa fa-envelope icon"></i>
+                  <input class="input-field" type="email" placeholder="Email" formControlName="email">
+  
+                  <div *ngIf="
+                    (  newForm.controls['email'].touched || newForm.controls['email'].dirty ) &&
+                    newForm.controls['email'].invalid ">
+                    <div class="form-text text-danger" *ngIf="newForm.controls['email'].errors?.['required']">
+                      This field is required
+                    </div>
+                  </div>
+                  <div *ngIf="
+                    (  newForm.controls['email'].touched || newForm.controls['email'].dirty ) &&
+                    newForm.controls['email'].invalid">
+                    <div class="form-text text-danger" *ngIf="newForm.controls['email'].errors?.['pattern']">
+                      invalid email
+                    </div>
+                  </div>
+  
+  
+                </div>
+  
+                <div class="input-container">
+                  <i class="fa fa-key icon"></i>
+                  <input class="input-field" type="password" placeholder="Password" formControlName="password">
+  
+  
+                  <div *ngIf="
+                   (  newForm.controls['password'].touched || newForm.controls['password'].dirty ) &&
+                   newForm.controls['password'].invalid
+                     ">
+                    <div class="form-text text-danger" *ngIf="newForm.controls['password'].errors?.['password']">
+                      This field is required
+                    </div>
+                  </div>
+                  <div *ngIf="
+                    (  newForm.controls['password'].touched || newForm.controls['password'].dirty ) &&
+                    newForm.controls['password'].invalid
+                                                                           ">
+                    <div class="form-text text-danger" *ngIf="newForm.controls['password'].errors?.['pattern']">
+                      invalid Regpass
+                    </div>
+                  </div>
+  
+                </div>
+  
+                <div class="input-container">
+                  <i class="fa fa-key icon"></i>
+                  <input class="input-field" type="password" placeholder="confirm password">
+  
+                </div>
+  
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+  
+                  <div>
+                    <span style="margin-left:2rem ;" ><input class="specifyColor" type="radio" formControlName="gender" id="male" value="male"
+                        checked>Male</span>
+                    <span  style="margin-left:2rem ;" ><input class="specifyColor" type="radio" formControlName="gender" id="female"
+                        value="female">Female</span>
+                  </div>
+                 
+                </div>
+  
+
+<hr>
+
+                <div class="input-container">
+                    <i class="fa fa-user icon"></i>
+    
+                    <input type="password" placeholder="License" formControlName="License"  />
+                   
+                  </div>
+
+
+        
+  
+                <button type="submit" class="btn" [disabled]="newForm.invalid">Register</button>
+              </form>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+

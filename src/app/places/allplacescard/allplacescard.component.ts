@@ -7,12 +7,12 @@ import { Component ,Input } from '@angular/core';
 })
 export class AllplacescardComponent {
   @Input() places={
-    id: '',
-    // title: '',
-    // price: '',
-    address: '',
-    // description: '',
-    // image: '',
+    name:'',
+     description:'',
+      price: '',
+    cover_img: '',
+    type:'',
+
   }
 
 }

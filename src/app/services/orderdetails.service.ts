@@ -5,16 +5,22 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class TourguideService {
+export class OrderdetailsService {
 
-  constructor(private http:HttpClient){}
 
-  getTourGuidetlist(): Observable <any>{
+  constructor(private http:HttpClient) { }
+
+
+  getOrders() : Observable <any> {
+      
     return this.http.get("https://fakestoreapi.com/products")
-  
   }
-  
-  getTourGuideDetails( id: any): Observable <any>{
-    return this.http.get(`https://fakestoreapi.com/products/${id}` )
+
+  deleteOrder(id : any ){
+    return this.http.delete(`http://localhost:8000/api/userRegistrations/${id}`);
+    
   }
+
+
+
 }

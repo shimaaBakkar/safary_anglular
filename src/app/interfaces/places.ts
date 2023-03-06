@@ -1,8 +1,11 @@
+
 export interface Places {
-    id: string;
-    // title: string;
-    // price: string;
-    address: string;
-    // description: string;
-    // image: string;
+  
+    name:string,
+     description:string,
+      price: string,
+    cover_img: string,
+    type:string,
+    image:string
+
 }

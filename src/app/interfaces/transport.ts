@@ -1,8 +1,9 @@
 export interface Transport {
-    id: string;
-    title: string;
-    price: string;
-    category: string;
-    description: string;
-    image: string;
+
+    id:string;
+    type:string;
+    license : string;
+    image : string;
+    driver_id: string;
+ 
 }
