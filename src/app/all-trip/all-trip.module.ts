@@ -6,6 +6,7 @@ import { AllTripComponent } from './all-trip.component';
 import { TripcardComponent } from './tripcard/tripcard.component';
 import { TripComponent } from './trip/trip.component';
 import { LandingpageModule } from "../landingpage/landingpage.module";
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,7 +18,13 @@ import { LandingpageModule } from "../landingpage/landingpage.module";
     imports: [
         CommonModule,
         AllTripRoutingModule,
-        LandingpageModule
+        LandingpageModule,
+        HttpClientModule
+    ],
+    exports:[
+        AllTripComponent,
+        TripcardComponent,
+        TripComponent
     ]
 })
 export class AllTripModule { }

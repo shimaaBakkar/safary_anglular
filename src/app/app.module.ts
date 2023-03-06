@@ -8,17 +8,14 @@ import { LandingpageModule } from './landingpage/landingpage.module';
 import { PlacesModule } from './places/places.module';
 import { AllTripModule } from './all-trip/all-trip.module';
 import { CustomizeTripModule } from './customize-trip/customize-trip.module';
-import { DashboardModule } from './dashboard/dashboard.module';
+
 import { HotelsModule } from './hotels/hotels.module';
 
 import { TourguideModule } from './tourguide/tourguide.module';
 import { VehcileModule } from './vehcile/vehcile.module';
-import { RegisterModule } from './register/register.module';
+// import { RegisterModule } from './register/register.module';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
-// import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,24 +23,26 @@ import { CommonModule } from '@angular/common';
     AppComponent,
        NavbarComponent,
        FooterComponent,
-   
+  
+
+      
+  
+
   ],
   imports: [
+    NgxSpinnerModule.forRoot({ type: 'ball-atom' }),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     LandingpageModule,
     AllTripModule,
-    CustomizeTripModule,
-    DashboardModule,
     HotelsModule,
     PlacesModule,
-    RegisterModule,
-    TourguideModule,
     VehcileModule,
-    FormsModule,
-    ReactiveFormsModule,
+  
+
   ],
+
 
   providers: [],
   bootstrap: [AppComponent],
@@ -53,7 +52,8 @@ import { CommonModule } from '@angular/common';
   //   ReactiveFormsModule
   // ]
 })
-export class AppModule { }
+export class AppModule {
 
+ }
 
 

@@ -1,0 +1,83 @@
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css /> -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col col-sm-5 col-xs-12">
+                            <h4 class="title">Data <span>List</span></h4>
+                        </div>
+                        <div class="col-sm-7 col-xs-12 text-right">
+                            <div class="btn_group">
+                                <button class="btn btn-sm btn-default"><i class="fa fa-file"></i>
+                                    Export to Excel
+                                </button>
+                                <a href="#" class="btn btn-sm btn-default"><i class="fa fa-plus-circle"></i>
+                                    Add New User
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Full Name</th>
+                                <th>Age</th>
+                                <th>Status</th>
+                                <th>Job Title</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                     
+                       
+                            <tr   *ngFor="let place of PlaceList ;">
+                                <td>1</td>
+                                <td>
+                                    <div class="user_icon">
+                                        <img [src]=" 'http://localhost:8000/' + place.cover_img " style="width: 70px;height: 70px; border-radius: 10px;" >
+                                    </div>    
+                                    {{place?.name}}</td>
+                                <td></td>
+                                <td><span class="status">{{place?.price}}</span></td>
+                                <td><span class="status">{{place?.type}}</span></td>
+                                <td>{{place?.description}}</td>
+                                <td>
+                                    <ul class="action-list">
+                                        <li><a href="#" class="edit" data-tip="setting"><i class="fa fa-cog"></i></a></li>
+                                        <li><a href="#" class="delete" data-tip="delete"><i class="fa fa-times-circle" (click)="deletePlaces(place.name)"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col col-sm-6 col-xs-8">Showing <b>5</b> out of <b>25</b> entries</div>
+                        <div class="col-sm-6 col-xs-4">
+                            <ul class="pagination hidden-xs pull-right">
+                                <li><a href="#">Prev</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">Next</a></li>
+                            </ul>
+                            <ul class="pagination visible-xs pull-right">
+                                <li><a href="#"><</a></li>
+                                <li><a href="#">></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

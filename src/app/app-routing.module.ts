@@ -4,6 +4,10 @@ import { AboutusComponent } from './about/aboutus/aboutus.component';
 
 // customize_trip
 import { CustomTripDetailsComponent } from './customize-trip/custom-trip-details/custom-trip-details.component';
+// import { PlaceComponent } from './customize-trip/custom_place/place.component';
+// import { HotelComponent } from './customize-trip/custo_hotel/hotel.component';
+import { AdminComponent } from './dashboard/admin/admin.component';
+import { SignupformComponent } from './dashboard/signupform/signupform.component';
 import { CustomTourgideComponent } from './customize-trip/custom-tourgide/custom-tourgide.component';
 import { PlaceComponent } from './customize-trip/custom_place/place.component'; //customize_place
 import { HotelComponent } from './customize-trip/custo_hotel/hotel.component'; //customize_hotel
@@ -27,6 +31,15 @@ import { FooterComponent } from './temp/footer/footer.component';
 
 
 const routes: Routes = [
+
+
+  { path: '' , loadChildren: ()  => import('./landingpage/landingpage.module').then(m => m.LandingpageModule) },
+  // { path: 'customize_trip', component: CustomTripDetailsComponent},
+  { path: 'customize/hotel', component: HotelComponent },
+  { path: 'customize/place', component: PlaceComponent},
+  { path: 'customize/tourgide', component: CustomTourgideComponent },
+  { path: 'customize/trip', component: CustomTripDetailsComponent},
+  { path: 'about', component: AboutusComponent},
   { path: '', loadChildren: () => import('./landingpage/landingpage.module').then(m => m.LandingpageModule) },
   // {path : "" ,redirectTo :"AswanTrip",pathMatch:"full"},
   { path: 'places', loadChildren: () => import('./places/places.module').then(m => m.PlacesModule) },
@@ -70,6 +83,18 @@ const routes: Routes = [
   // },
 
   { path: 'payment', loadChildren: () => import('./payment/payment.module').then(m => m.PaymentModule) },
+
+
+  { path: 'registration', loadChildren: () => import('./registration/registration.module').then(m => m.RegistrationModule) },
+
+
+  { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
+  {path: "dashboard/signupform" ,component:SignupformComponent},
+  {path: "dashboard/admin" ,component:AdminComponent},
+
+
+
+  {path:"**",component:FooterComponent},
   { path: "**", component: FooterComponent },//can make a notfound component!
 ];
 @NgModule({

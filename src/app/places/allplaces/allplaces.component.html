@@ -71,5 +71,23 @@
     <div class="col-lg-4  col-sm-6 col-12 rounded">
       <app-allplacescard></app-allplacescard>
     </div>
-  </div>
-</div>
+
+
+    <div class="container">
+        <div class="row g-5" style="margin-top: 1rem;" >
+          <div class="col-lg-3  col-sm-6 col-12 rounded"  *ngFor="let places of placesList ;" >  
+                  <app-allplacescard [places]="places"></app-allplacescard>
+        </div>
+    
+        </div>
+      </div>
+
+   
+
+    
+    
+
+
+
+
+

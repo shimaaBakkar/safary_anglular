@@ -7,11 +7,13 @@ import { AboutDesplacesComponent } from './about-desplaces/about-desplaces.compo
 import { AllplacesComponent } from './allplaces/allplaces.component';
 import { AllplacescardComponent } from './allplacescard/allplacescard.component';
 import { PlacesviewComponent } from './placesview/placesview.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
   declarations: [
-    PlacesComponent,
+PlacesComponent,
     PlaaceDescComponent,
     AboutDesplacesComponent,
     AllplacesComponent,
@@ -20,14 +22,19 @@ import { PlacesviewComponent } from './placesview/placesview.component';
   ],
   imports: [
     CommonModule,
-    PlacesRoutingModule
+    PlacesRoutingModule,
+    HttpClientModule
   ],
   exports: [ 
-     PlacesComponent,
+
     PlaaceDescComponent,
     AboutDesplacesComponent,
     AllplacesComponent,
     AllplacescardComponent,
     PlacesviewComponent]
 })
-export class PlacesModule { }
+
+export class PlacesModule {
+
+
+ }

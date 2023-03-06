@@ -1,0 +1,117 @@
+<section class="h-100 h-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex  align-items-center h-100" style="margin-left: 9rem;">
+        <div class="col-lg-8 col-xl-6">
+          <div class="card rounded-3">
+        
+            <div class="card-body p-5 p-md-5">
+
+              <form action="" (ngSubmit)="submitForm()" [formGroup]="newForm">
+                <h2> Edit Trip </h2>
+  
+  
+                <div *ngIf="
+                  newForm.dirty  && newForm.invalid ">
+                  <div class="form-text text-danger" *ngIf="newForm.errors?.['required']">
+                    This field is required
+                  </div>
+                </div>
+                <div class="profImg">
+                    <span>select All places Images</span>
+                    <div *ngFor="let img of fileimages">
+                        <span>{{img}}
+                          <img [src]=" 'http://localhost:8000/' + newForm.controls['image'].value " alt="" style="height: 5rem;">
+                        </span>
+                      </div>
+                  <label for="files">
+                    <input type="file" id="files" style="visibility:hidden;" accept="image/png, image/gif, image/jpeg"  formControlName="image" (change)="selectImages($event)" [value]="newForm.controls['image'].value" />
+                  </label>
+                </div>
+        
+                <div class="profImg">
+                    <span>select Trip cover image</span>
+                  <label for="files">
+                
+                    <img [src]=" 'http://localhost:8000/' + newForm.controls['cover_img'].value " style="width: 70px;height: 70px; border-radius: 10px;" >
+  
+  
+                    <input type="file" id="files" style="visibility:hidden;" accept="image/png, image/gif, image/jpeg"  formControlName="cover_img" (change)="selectImage($event)" [value]="newForm.controls['cover_img'].value"/>
+                  </label>
+                  <span>{{fileName}}</span>
+                </div>
+
+
+                <div class="input-container">description
+                
+                  <i class="fa fa-user icon"></i>
+                  <input class="input-field" type="text" placeholder="description" formControlName="description" [value]="newForm.controls['description'].value">
+  
+                  <div *ngIf="
+                    (  newForm.controls['description'].touched || newForm.controls['description'].dirty ) &&
+                    newForm.controls['description'].invalid
+                    ">
+                    <div class="form-text text-danger" *ngIf="newForm.controls['description'].errors?.['required']">
+                      This field is required
+                    </div>
+                  </div>
+           
+  </div>
+                <div class="input-container">n_of_people
+                  <i class="fa fa-envelope icon"></i>
+                  <input class="input-field" type="number" placeholder="n_of_people" formControlName="n_of_people" [value]="newForm.controls['n_of_people'].value">
+  
+                  <div *ngIf="
+                    (  newForm.controls['n_of_people'].touched || newForm.controls['n_of_people'].dirty ) &&
+                    newForm.controls['n_of_people'].invalid ">
+                    <div class="form-text text-danger" *ngIf="newForm.controls['n_of_people'].errors?.['required']">
+                      This field is required
+                    </div>
+                  </div>
+   
+  
+  
+                </div>
+  
+                <div class="input-container">num_of_days
+                  <i class="fa fa-key icon"></i>
+                  <input class="input-field" type="number" placeholder="num_of_days" formControlName="num_of_days" [value]="newForm.controls['num_of_days'].value">
+  
+  
+                  <div *ngIf="
+                   (  newForm.controls['num_of_days'].touched || newForm.controls['num_of_days'].dirty ) &&
+                   newForm.controls['num_of_days'].invalid
+                     ">
+     
+  
+                </div>
+                </div>
+  
+                <div class="input-container">n_of_people
+                  <i class="fa fa-key icon"></i>
+                  <input class="input-field" type="number" placeholder="n_of_people"  formControlName="n_of_people" [value]="newForm.controls['n_of_people'].value">
+                  <div *ngIf="
+                  (  newForm.controls['n_of_people'].touched || newForm.controls['n_of_people'].dirty ) &&
+                  newForm.controls['n_of_people'].invalid
+                    ">
+
+                    <div class="form-text text-danger" *ngIf="newForm.controls['n_of_people'].errors?.['required']">
+                        This field is required
+                      </div>
+                </div>
+  
+          </div>
+
+
+        
+  
+                <button type="submit" class="btn" [disabled]="newForm.invalid" >Register</button>
+              </form>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+

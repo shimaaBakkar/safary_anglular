@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Trip } from 'src/app/interfaces/trip';
+import { TripService } from 'src/app/services/trip.service';
 
 @Component({
   selector: 'app-trip',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./trip.component.css']
 })
 export class TripComponent {
-  placeCards = new Array(12);
+  TripList:Array <Trip> =[];
+
+  constructor (private TripListServices :TripService){}
+  
+  ngOnInit():void{
+  
+    this.TripListServices.getTriptlist().subscribe(
+      res => {this.TripList=res}
+    )
+  }
 }

@@ -1,4 +1,4 @@
-<div role=navigation style="backdrop-filter: blur(5px)">
+<div role=navigation style="backdrop-filter: blur(5px);">
   <div class="p-3 bg-light">
     <div class=container>
       <div class="row align-items-center">
@@ -37,9 +37,10 @@
     </div>
   </div>
 
-  <div class="border-bottom border-top" id=subNavContainer>
-    <nav class="navbar navbar-expand-md stickynavbar">
-      <div class="container-fluid ">
+
+  <div class="border-bottom border-top" id="subNavContainer">
+    <nav class="navbar navbar-expand-md ">
+      <div class="container-fluid">
         <button class="navbar-toggler mx-auto" type=button data-bs-toggle=collapse data-bs-target=#navbarNavDropdown
           aria-controls=navbarNavDropdown aria-expanded=false aria-label="Toggle navigation"><i
             class="fas fa-bars me-2"></i>
@@ -52,6 +53,16 @@
             <li class=nav-item><a class="nav-link mx-2" routerLinkActive="active" routerLink="hotels">Hotels</a></li>
             <li class=nav-item><a class="nav-link mx-2" routerLinkActive="active" routerLink="places">Places</a></li>
             <li class=nav-item><a class="nav-link mx-2" routerLinkActive="active" routerLink="Tourguide">Tourgide</a></li>
+            <li class=nav-item><a class="nav-link mx-2" routerLinkActive="active"
+                routerLink="Vehcile">Transportation</a>
+              </li>
+            <li class=nav-item><a class="nav-link mx-2" routerLinkActive="active" routerLink="#">Contact Us</a></li>
+            <li class="nav-item dropdown"><a class="nav-link mx-2 dropdown-toggle" href=# id=navbarDropdownMenuLink
+                role=button data-bs-toggle=dropdown aria-expanded=false routerLinkActive="active">Custom Trip</a>
+                </li>
+          </ul>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li class=nav-item><a class="nav-link mx-2" routerLinkActive="active" routerLink="/customize/trip">trip
             <li class=nav-item><a class="nav-link mx-2" routerLinkActive="active" routerLink="Vehcile">Transportation</a></li>                
             <!-- <li class=nav-item><a class="nav-link mx-2" routerLinkActive="active" routerLink="#">Contact Us</a></li> -->
             <li class="nav-item dropdown"><a class="nav-link mx-2 dropdown-toggle" id="navbarDropdownMenuLink" role="button"
@@ -59,13 +70,19 @@
               <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li class=nav-item><a class="nav-link mx-2" routerLinkActive="active" routerLink="customize/trip">trip
                     details</a>
+                    </li>
                 <li class=nav-item><a class="nav-link mx-2" routerLinkActive="active"
-                    routerLink="customize/hotel">hotel</a>
+                    routerLink="/customize/hotel">hotel</a>
+                    </li>
                 <li class=nav-item><a class="nav-link mx-2" routerLinkActive="active"
                     routerLink="/customize/place">Places</a>
-                <li class=nav-item><a class="nav-link mx-2" routerLinkActive="active"
+                  </li>
+                <li class=nav-item>
+                  <a class="nav-link mx-2" routerLinkActive="active"
                     routerLink="/customize/tourgide">Tourgide</a>
-                <li class=nav-item><a class="nav-link mx-2 mb-1" routerLinkActive="active"
+                    </li>
+                <li class=nav-item>
+                  <a class="nav-link mx-2 mb-1" routerLinkActive="active"
                     routerLink="/customize/trip-details">Your Trip</a>
               </ul> -->
             </li>
@@ -98,6 +115,7 @@
           </ul>
   </header>
         </div>
+
       </div>
     </nav>
   </div>

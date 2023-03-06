@@ -5,6 +5,7 @@ import { VehcileRoutingModule } from './vehcile-routing.module';
 import { VehcileComponent } from './vehcile.component';
 import { VehcilepageComponent } from './vehcilepage/vehcilepage.component';
 import { VehcilecardComponent } from './vehcilecard/vehcilecard.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { VehcilecardComponent } from './vehcilecard/vehcilecard.component';
   ],
   imports: [
     CommonModule,
-    VehcileRoutingModule
+    VehcileRoutingModule,
+    HttpClientModule
   ]
 })
 export class VehcileModule { }
