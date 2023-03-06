@@ -30,7 +30,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 
   ],
   imports: [
-    NgxSpinnerModule.forRoot({ type: 'ball-atom' }),
+    // NgxSpinnerModule.forRoot({ type: 'ball-atom' }),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

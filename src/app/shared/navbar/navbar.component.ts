@@ -13,7 +13,7 @@ throw new Error('Method not implemented.');
 hotel: any;
 
 
-  openplace(){
-this.router.navigate(['Allplaces'])
-  }
+//   openplace(){
+// this.router.navigate(['Allplaces'])
+//   }
 }

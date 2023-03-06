@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormControl, FormGroup } from '@angular/forms';
+import { User } from 'src/app/interfaces/auth/user';
 
 @Component({
   selector: 'app-user-reg',
@@ -68,13 +69,14 @@ export class UserRegComponent implements OnInit {
 // SUBMIT FUNCTION
 // userSubmit()
 // {
-//   let userModel: IUser = <IUser> UserRegForm.value;
-// call [API] & send [userModel]
+  // let userModel: User = <User> this.UserRegForm.value;
+    // call [''] 
+    // & send [userModel]
 
 
 // FOR TEST 
-// console.log(userModel); => return object of userModel =>> (well done ^-^, its ready to send to backend ^-^);
-
+// console.log(userModel); 
+// => return object of userModel =>> (well done ^-^, its ready to send to backend ^-^);
 // }
   // UserRegForm!: FormGroup;
 }
