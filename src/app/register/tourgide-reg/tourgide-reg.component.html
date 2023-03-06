@@ -4,8 +4,6 @@
         <div class="container container__form ">
             <!-- method="post" enctype="multipart/form-data" -->
             <form [formGroup]="TourgideRegForm" class="form" id="form1">
-                <!-- (ngSubmit)="userSubmit()" -->
-                <!-- <div class="container"> -->
                 <h2 class="form__title">Sign Up</h2>
                 <!-- <div class="profImg">
                     <label for="files">
@@ -85,24 +83,44 @@
                     </div>
                 </div>
                 <!-- lang -->
-                <div class="lang">
+                <div>
                     Languages :
-                    <span>
-                        Arabic
-                        <input class="specifyColor" type="checkbox" name="arabic" id="arabic" value="Arabic" TourgideRegForm="language">
-                    </span>
-                    <span>
-                        English
-                        <input class="specifyColor" type="checkbox" name="eng" id="eng" value="English" TourgideRegForm="language">
-                    </span>
-                    <span>
-                        Spanish
-                        <input class="specifyColor" type="checkbox" name="spanish" id="spanish" value="spanish" TourgideRegForm="language">
-                    </span>
-                    <span>
-                        Italian
-                        <input class="specifyColor" type="checkbox" name="italien" id="italien" value="Italian" TourgideRegForm="language">
-                    </span>
+                    <br>
+                    <ng-container class="lang" *ngFor="let lang of language">
+                            <label for="{{lang}}">
+                                <input class="specifyColor" type="checkbox" value={{lang}}>
+                                {{lang}}
+                            </label>
+                            <br>
+                    </ng-container>
+                </div>
+                  <!-- old one -->
+                <div>
+
+
+                    <!-- <div class="lang">
+                        Languages :
+                        <span>
+                            Arabic
+                            <input class="specifyColor" type="checkbox" name="arabic" id="arabic" value="Arabic"
+                             TourgideRegForm="language">
+                        </span>
+                        <span>
+                            English
+                            <input class="specifyColor" type="checkbox" name="eng" id="eng" value="English"
+                                TourgideRegForm="language">
+                        </span>
+                        <span>
+                            Spanish
+                            <input class="specifyColor" type="checkbox" name="spanish" id="spanish" value="spanish"
+                                TourgideRegForm="language">
+                        </span>
+                        <span>
+                            Italian
+                            <input class="specifyColor" type="checkbox" name="italien" id="italien" value="Italian"
+                                TourgideRegForm="language">
+                        </span>
+                    </div> -->
                 </div>
                 <!-- submit -->
                 <div>
@@ -114,14 +132,22 @@
         </div>
 
         <!-- test -->
-        <!-- <div>
+        <div>
             <h3>to be removed "for test registeration" </h3>
             <div>
-                {{TourgideRegComponent.value | json}}
+                {{TourgideRegForm.value | json}}
                 <br>
                 {{TourgideName?.errors | json}}
+                <br>
+                {{gender?.errors | json}}
+                <br>
+                {{Tourgideemail?.errors | json}}
+                <br>
+                {{Tourgidepassword?.errors | json}}
+                <br>
+                <!-- {{language?.errors | json}} -->
             </div>
-        </div> -->
+        </div>
 
         <!-- Sign In -->
         <!-- <div class="container__form container--signin">
